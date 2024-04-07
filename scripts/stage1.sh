@@ -1,1 +1,1 @@
-sh create_db.sh
+bash create_db.sh
