@@ -1,1 +1,1 @@
-python build_projectdb.py
+python scripts/build_projectdb.py
