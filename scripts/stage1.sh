@@ -1,1 +1,1 @@
-bash create_db.sh
+bash build_projectdb.py
