@@ -1,1 +1,1 @@
-bash build_projectdb.py
+py build_projectdb.py
