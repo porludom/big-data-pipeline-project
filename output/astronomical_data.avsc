@@ -1,0 +1,49 @@
+{
+  "type" : "record",
+  "name" : "astronomical_data",
+  "doc" : "Sqoop import of astronomical_data",
+  "fields" : [ {
+    "name" : "id",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "id",
+    "sqlType" : "4"
+  }, {
+    "name" : "sunrise",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "sunrise",
+    "sqlType" : "12"
+  }, {
+    "name" : "sunset",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "sunset",
+    "sqlType" : "12"
+  }, {
+    "name" : "moonrise",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "moonrise",
+    "sqlType" : "12"
+  }, {
+    "name" : "moonset",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "moonset",
+    "sqlType" : "12"
+  }, {
+    "name" : "moon_phase",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "moon_phase",
+    "sqlType" : "12"
+  }, {
+    "name" : "moon_illumination",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "moon_illumination",
+    "sqlType" : "4"
+  } ],
+  "tableName" : "astronomical_data"
+}
