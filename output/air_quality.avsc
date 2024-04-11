@@ -1,0 +1,61 @@
+{
+  "type" : "record",
+  "name" : "air_quality",
+  "doc" : "Sqoop import of air_quality",
+  "fields" : [ {
+    "name" : "id",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "id",
+    "sqlType" : "4"
+  }, {
+    "name" : "air_quality_Carbon_Monoxide",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "air_quality_Carbon_Monoxide",
+    "sqlType" : "8"
+  }, {
+    "name" : "air_quality_Ozone",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "air_quality_Ozone",
+    "sqlType" : "8"
+  }, {
+    "name" : "air_quality_Nitrogen_dioxide",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "air_quality_Nitrogen_dioxide",
+    "sqlType" : "8"
+  }, {
+    "name" : "air_quality_Sulphur_dioxide",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "air_quality_Sulphur_dioxide",
+    "sqlType" : "8"
+  }, {
+    "name" : "air_quality_PM2_5",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "air_quality_PM2_5",
+    "sqlType" : "8"
+  }, {
+    "name" : "air_quality_PM10",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "air_quality_PM10",
+    "sqlType" : "8"
+  }, {
+    "name" : "air_quality_us_epa_index",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "air_quality_us_epa_index",
+    "sqlType" : "4"
+  }, {
+    "name" : "air_quality_gb_defra_index",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "air_quality_gb_defra_index",
+    "sqlType" : "4"
+  } ],
+  "tableName" : "air_quality"
+}
