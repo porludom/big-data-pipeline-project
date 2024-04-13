@@ -1,5 +1,10 @@
+DROP TABLE IF EXISTS weather_conditions CASCADE;
+DROP TABLE IF EXISTS astronomical_data CASCADE;
+DROP TABLE IF EXISTS air_quality CASCADE;
+DROP TABLE IF EXISTS locations CASCADE;
+
 CREATE TABLE IF NOT EXISTS locations (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     country VARCHAR(255) NOT NULL,
     location_name VARCHAR(255) NOT NULL,
     latitude DOUBLE PRECISION NOT NULL,
@@ -8,7 +13,7 @@ CREATE TABLE IF NOT EXISTS locations (
 );
 
 CREATE TABLE IF NOT EXISTS weather_conditions (
-    id SERIAL PRIMARY KEY,
+--     id SERIAL PRIMARY KEY,
     location_id INTEGER NOT NULL,
     last_updated_epoch INTEGER NOT NULL,
     last_updated TIMESTAMP WITHOUT TIME ZONE NOT NULL,
@@ -36,7 +41,7 @@ CREATE TABLE IF NOT EXISTS weather_conditions (
 );
 
 CREATE TABLE IF NOT EXISTS astronomical_data (
-    id SERIAL PRIMARY KEY,
+--     id SERIAL PRIMARY KEY,
     location_id INTEGER NOT NULL,
     sunrise VARCHAR(255) NOT NULL,
     sunset VARCHAR(255) NOT NULL,
@@ -48,7 +53,7 @@ CREATE TABLE IF NOT EXISTS astronomical_data (
 );
 
 CREATE TABLE IF NOT EXISTS air_quality (
-    id SERIAL PRIMARY KEY,
+--     id SERIAL PRIMARY KEY,
     location_id INTEGER NOT NULL,
     air_quality_Carbon_Monoxide DOUBLE PRECISION NOT NULL,
     air_quality_Ozone DOUBLE PRECISION NOT NULL,
