@@ -10,3 +10,4 @@ location_id int,
     moon_illumination int)
 PARTITIONED BY (moon_phase int) STORED AS AVRO LOCATION 'project/hive/warehouse/astronomical_data_part' 
 TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY');
+SHOW PARTITIONS astronomical_data_part;
