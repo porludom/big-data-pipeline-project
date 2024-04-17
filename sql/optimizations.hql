@@ -15,3 +15,9 @@ STORED AS AVRO LOCATION 'project/hive/warehouse/astronomical_data_part'
 TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY');
 
 SHOW PARTITIONS astronomical_data_part;
+
+SET hive.exec.dynamic.partition.mode=nonstrict;
+INSERT INTO astronomical_data_part partition (moon_phase)
+    (SELECT * FROM astronomical_data);
+
+DROP TABLE astronomical_data;
