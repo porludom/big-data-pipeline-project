@@ -10,6 +10,7 @@ CREATE EXTERNAL TABLE astronomical_data_part
     moon_illumination int
 )
 PARTITIONED BY (moon_phase varchar(255))
+CLUSTERED BY (moonrise) into 5 buckets
 STORED AS AVRO LOCATION 'project/hive/warehouse/astronomical_data_part' 
 TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY');
 
