@@ -10,4 +10,4 @@ CREATE EXTERNAL TABLE locations STORED AS AVRO LOCATION 'project/warehouse/locat
 CREATE EXTERNAL TABLE weather_conditions STORED AS AVRO LOCATION 'project/warehouse/weather_conditions' TBLPROPERTIES ('avro.schema.url' = 'project/warehouse/avsc/weather_conditions.avsc');
 
 -- For checking the content of tables
-SELECT * FROM weather_conditions LIMIT 10;
+-- SELECT * FROM weather_conditions LIMIT 10;
