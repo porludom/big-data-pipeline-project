@@ -7,7 +7,6 @@ CREATE EXTERNAL TABLE astronomical_data_part
     sunset varchar(255),
     moonrise varchar(255),
     moonset varchar(255),
-    moon_phase varchar(255),
     moon_illumination int
 )
 PARTITIONED BY (moon_phase varchar(255))
