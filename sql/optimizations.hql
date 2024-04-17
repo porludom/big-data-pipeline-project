@@ -18,6 +18,14 @@ SHOW PARTITIONS astronomical_data_part;
 
 SET hive.exec.dynamic.partition.mode=nonstrict;
 INSERT INTO astronomical_data_part partition (moon_phase)
-    (SELECT * FROM astronomical_data);
+    (SELECT 
+        location_id int,
+        sunrise varchar(255),
+        sunset varchar(255),
+        moonrise varchar(255),
+        moonset varchar(255),
+        moon_phase varchar(255),
+        moon_illumination int,
+FROM astronomical_data);
 
 DROP TABLE astronomical_data;
