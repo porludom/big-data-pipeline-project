@@ -23,8 +23,8 @@ INSERT INTO astronomical_data_part partition (moon_phase)
         sunset,
         moonrise,
         moonset,
-        moon_phase,
-        moon_illumination
+        moon_illumination,
+        moon_phase
 FROM astronomical_data);
 
 DROP TABLE astronomical_data;
