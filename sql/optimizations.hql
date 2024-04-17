@@ -8,6 +8,8 @@ location_id int,
     moonset varchar(255),
     moon_phase varchar(255),
     moon_illumination int)
-PARTITIONED BY (moon_phase int) STORED AS AVRO LOCATION 'project/hive/warehouse/astronomical_data_part' 
+PARTITIONED BY (moon_phase int) 
+CLUSTERED BY (vin) into 5 buckets
+STORED AS AVRO LOCATION 'project/hive/warehouse/astronomical_data_part' 
 TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY');
 SHOW PARTITIONS astronomical_data_part;
