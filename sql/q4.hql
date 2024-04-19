@@ -34,7 +34,7 @@ SELECT
 FROM
     locations l
 JOIN
-    air_quality aq ON l.id = aq.location_id
+    air_quality aq ON l.id = aq.id
 GROUP BY
     l.country
 ORDER BY
