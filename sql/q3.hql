@@ -25,7 +25,7 @@ FIELDS TERMINATED BY ','
 LOCATION 'project/hive/warehouse/q3';
 
 
-INSERT INTO TABLE q2_results
+INSERT INTO TABLE q3_results
 SELECT
     moon_phase,
     AVG(temperature_celsius) AS avg_temp,
