@@ -23,7 +23,7 @@ SELECT l.country,
        AVG(w.humidity) AS avg_humidity,
        AVG(a.air_quality_pm2_5) AS avg_pm2_5
 FROM locations l
-JOIN weather_conditions w ON l.id = w.id -
+JOIN weather_conditions w ON l.id = w.id
 JOIN air_quality a ON l.id = a.id
 GROUP BY l.country,
          l.location_name
