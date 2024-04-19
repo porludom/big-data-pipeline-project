@@ -22,7 +22,7 @@ SELECT
 FROM
     weather_conditions
 JOIN
-    air_quality ON weather_conditions.id = air_quality.id  -- Assuming the join is on a common ID
+    air_quality ON weather_conditions.id = air_quality.id  
 GROUP BY
     temperature_celsius
 ORDER BY
