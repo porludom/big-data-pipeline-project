@@ -1,28 +1,51 @@
--- Impact of Moon Phases on Weather
+-- the most common weather condition for each country
 USE teamx_project19;
 DROP TABLE IF EXISTS q3_results;
 
 CREATE EXTERNAL TABLE q3_results(
-    Moon_Phase STRING,
-    Avg_Temperature_Celsius FLOAT,
-    Avg_Moon_Phase FLOAT
+    Country VARCHAR,
+    Most_Common_Condition VARCHAR,
+    Frequency INT
 )
-
 ROW FORMAT DELIMITED 
 FIELDS TERMINATED BY ',' 
 LOCATION 'project/hive/warehouse/q3';
 
 SET hive.resultset.use.unique.column.names = false;
 
+WITH ConditionCounts AS (
+    SELECT
+        loc.country,
+        wc.condition_text,
+        COUNT(*) AS condition_count
+    FROM
+        locations loc
+    JOIN
+        weather_conditions wc ON loc.id = wc.id
+    GROUP BY
+        loc.country, wc.condition_text
+),
+MaxConditions AS (
+    SELECT
+        country,
+        MAX(condition_count) AS max_count
+    FROM
+        ConditionCounts
+    GROUP BY
+        country
+)
+
 INSERT INTO TABLE q3_results
 SELECT
-    moon_phase,
-    AVG(temperature_celsius) AS avg_temp,
-    AVG(humidity) AS avg_humidity
-FROM astronomical_data_part ast
-JOIN weather_conditions w ON ast.location_id = w.id
-GROUP BY moon_phase;
-
+    cc.country AS Country,
+    cc.condition_text AS Most_Common_Condition,
+    cc.condition_count AS Frequency
+FROM
+    ConditionCounts cc
+JOIN
+    MaxConditions mc ON cc.country = mc.country AND cc.condition_count = mc.max_count
+ORDER BY
+    cc.country, cc.condition_count DESC;
 
 SELECT *
 FROM q3_results;
