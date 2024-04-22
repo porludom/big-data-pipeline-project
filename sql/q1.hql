@@ -1,4 +1,4 @@
-USE teamx_project19;
+USE team19_projectdb;
 DROP TABLE IF EXISTS q1_results;
 
 CREATE EXTERNAL TABLE q1_results(
