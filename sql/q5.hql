@@ -1,5 +1,5 @@
 -- Relationship Between Temperature and Air Quality Indexes
-USE teamx_project19;
+USE team19_projectdb;
 DROP TABLE IF EXISTS q5_results;
 
 CREATE EXTERNAL TABLE q5_results(
