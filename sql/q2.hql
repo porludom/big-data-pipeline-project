@@ -1,5 +1,5 @@
 -- Count of Locations and Total Observations per Country
-USE teamx_project19;
+USE team19_projectdb;
 DROP TABLE IF EXISTS q2_results;
 
 CREATE EXTERNAL TABLE q2_results(
