@@ -1,5 +1,5 @@
 -- Average Air Quality Metrics by Country
-USE teamx_project19;
+USE team19_projectdb;
 DROP TABLE IF EXISTS q4_results;
 
 CREATE EXTERNAL TABLE q4_results(
