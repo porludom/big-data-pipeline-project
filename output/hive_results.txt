@@ -1,0 +1,15 @@
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- Drop database if exists and create a new database
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP DATABASE IF EXISTS team19_projectdb CASCADE;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE DATABASE team19_projectdb LOCATION "project/hive/warehouse";
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team19_projectdb;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- Create table for car prices
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE air_quality STORED AS AVRO LOCATION 'project/wareho use/air_quality' TBLPROPERTIES ('avro.schema.url' = 'project/warehouse/avsc/air_quality.avsc');
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE astronomical_data STORED AS AVRO LOCATION 'project/ warehouse/astronomical_data' TBLPROPERTIES ('avro.schema.url' = 'project/warehouse/avsc/astronomical_data.avsc');
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE locations STORED AS AVRO LOCATION 'project/warehous e/locations' TBLPROPERTIES ('avro.schema.url' = 'project/warehouse/avsc/locations.avsc');
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE weather_conditions STORED AS AVRO LOCATION 'project /warehouse/weather_conditions' TBLPROPERTIES ('avro.schema.url' = 'project/warehouse/avsc/weather_conditions.avsc');
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- For checking the content of tables
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- SELECT * FROM weather_conditions LIMIT 10;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
