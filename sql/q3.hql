@@ -1,5 +1,5 @@
 -- the most common weather condition for each country
-USE teamx_project19;
+USE team19_projectdb;
 DROP TABLE IF EXISTS q3_results;
 
 CREATE EXTERNAL TABLE q3_results(
