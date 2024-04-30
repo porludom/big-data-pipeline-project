@@ -1,0 +1,3 @@
+model,f1
+"DecisionTreeClassificationModel: uid=DecisionTreeClassifier_6d7bda352658, depth=10, numNodes=1025, numClasses=53, numFeatures=20",0.782443345951287
+"RandomForestClassificationModel: uid=RandomForestClassifier_f9c3288b9c00, numTrees=20, numClasses=53, numFeatures=20",0.6926036456852962
