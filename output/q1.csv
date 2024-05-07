@@ -1,9 +1,41 @@
-moon_phase,avg_temp,avg_humidity
-First Quarter,19.224780058651028,70.16129032258064
-Full Moon,19.39866666666666,71.38307692307693
-Last Quarter,19.598889614630973,68.96799477465709
-New Moon,19.676923076923085,69.35128205128206
-Waning Crescent,19.35822409666019,69.65735780234812
-Waning Gibbous,19.462434607645893,69.90060362173038
-Waxing Crescent,19.190140845070427,70.68166626879923
-Waxing Gibbous,19.143801749271123,69.18099125364431
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team19_projectdb;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE IF EXISTS q1_results;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE q1_results(
+. . . . . . . . . . . . . . . . . . . . . . .>     Moon_Phase STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     Avg_Temperature_Celsius FLOAT,
+. . . . . . . . . . . . . . . . . . . . . . .>     Avg_Moon_Phase FLOAT
+. . . . . . . . . . . . . . . . . . . . . . .> )
+. . . . . . . . . . . . . . . . . . . . . . .> 
+. . . . . . . . . . . . . . . . . . . . . . .> ROW FORMAT DELIMITED 
+. . . . . . . . . . . . . . . . . . . . . . .> FIELDS TERMINATED BY ',' 
+. . . . . . . . . . . . . . . . . . . . . . .> LOCATION 'project/hive/warehouse/q1';
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.resultset.use.unique.column.names = false;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> INSERT INTO TABLE q1_results
+. . . . . . . . . . . . . . . . . . . . . . .> SELECT
+. . . . . . . . . . . . . . . . . . . . . . .>     moon_phase,
+. . . . . . . . . . . . . . . . . . . . . . .>     AVG(temperature_celsius) AS avg_temp,
+. . . . . . . . . . . . . . . . . . . . . . .>     AVG(humidity) AS avg_humidity
+. . . . . . . . . . . . . . . . . . . . . . .> FROM astronomical_data_part ast
+. . . . . . . . . . . . . . . . . . . . . . .> JOIN weather_conditions w ON ast.location_id = w.id
+. . . . . . . . . . . . . . . . . . . . . . .> GROUP BY moon_phase;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SELECT *
+. . . . . . . . . . . . . . . . . . . . . . .> FROM q1_results;
++------------------+--------------------------+-----------------+
+|    moon_phase    | avg_temperature_celsius  | avg_moon_phase  |
++------------------+--------------------------+-----------------+
+| First Quarter    | 19.22478                 | 70.16129        |
+| Full Moon        | 19.398666                | 71.38308        |
+| Last Quarter     | 19.59889                 | 68.967995       |
+| New Moon         | 19.676924                | 69.35128        |
+| Waning Crescent  | 19.358225                | 69.65736        |
+| Waning Gibbous   | 19.462435                | 69.900604       |
+| Waxing Crescent  | 19.190142                | 70.68166        |
+| Waxing Gibbous   | 19.143803                | 69.18099        |
++------------------+--------------------------+-----------------+
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
