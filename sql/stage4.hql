@@ -7,12 +7,13 @@ DROP TABLE IF EXISTS evaluation;
 CREATE EXTERNAL TABLE evaluation (model STRING, f1 DOUBLE) 
 --ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 ROW FORMAT DELIMITED
+LOCATION '/project/output/evaluation.csv'
 FIELDS TERMINATED BY ',';
 --WITH SERDEPROPERTIES (
 --   "separatorChar" = ",",
 --   "quoteChar"     = "\"")
 
-LOCATION '/project/output/evaluation.csv'
+
 --tblproperties ("skip.header.line.count"="1");
 
 --LOAD DATA INPATH '/project/output/evaluation.csv' OVERWRITE INTO TABLE evaluation;
