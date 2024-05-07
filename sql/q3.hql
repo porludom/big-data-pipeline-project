@@ -3,8 +3,8 @@ USE team19_projectdb;
 DROP TABLE IF EXISTS q3_results;
 
 CREATE EXTERNAL TABLE q3_results(
-    Country VARCHAR,
-    Most_Common_Condition VARCHAR,
+    Country VARCHAR(255),
+    Most_Common_Condition VARCHAR(255),
     Frequency INT
 )
 ROW FORMAT DELIMITED 
