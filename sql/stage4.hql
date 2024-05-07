@@ -11,3 +11,4 @@ WITH SERDEPROPERTIES (
    "quoteChar"     = "\"")
 LOCATION 'project/output/evaluation.csv'
 tblproperties ("skip.header.line.count"="1");
+SELECT * FROM evaluation;
