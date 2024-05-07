@@ -10,6 +10,5 @@ WITH SERDEPROPERTIES (
    "separatorChar" = ",",
    "quoteChar"     = "\"")
 LOCATION 'project/big-data-pipeline-project/output/evaluation.csv'
-tblproperties ("skip.header.line.count"="1");
 
 SELECT model, f1 FROM evaluation;
