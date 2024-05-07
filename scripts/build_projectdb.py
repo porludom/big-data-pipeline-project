@@ -10,7 +10,7 @@ with open("../password", "r", encoding="utf-8") as file:
 
 # Build connection string
 connString = (
-    f"host=hadoop-04.uni.innopolis.ru port=5432 user=team19 "
+    f"host=hadoop-04.uni.innopolis.ru port=5432 user=team19 ",
     f"dbname=team19_projectdb password={password}")
 
 # Connect to the remote dbms
