@@ -15,6 +15,6 @@ FIELDS TERMINATED BY ',';
 --LOCATION 'project/big-data-pipeline-project/output/evaluation.csv'
 --tblproperties ("skip.header.line.count"="1");
 
-LOAD DATA INPATH 'project/hive/warehouse/evaluation' INTO TABLE evaluation;
+LOAD DATA INPATH './output/evaluation.csv' INTO TABLE evaluation;
 
 SELECT model, f1 FROM evaluation;
