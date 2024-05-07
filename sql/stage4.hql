@@ -1,5 +1,5 @@
---DROP DATABASE IF EXISTS team19_projectdb CASCADE;
---CREATE DATABASE team19_projectdb LOCATION "project/hive/warehouse";
+DROP DATABASE IF EXISTS team19_projectdb CASCADE;
+CREATE DATABASE team19_projectdb LOCATION "project/hive/warehouse";
 USE team19_projectdb;
 
 
