@@ -7,7 +7,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS evaluation(model STRING, f1 DOUBLE)
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
-LOCATION '/output/evaluation.csv';
+LOCATION 'project/output/evaluation.csv';
 
 
 
