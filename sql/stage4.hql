@@ -1,6 +1,6 @@
 USE team19_projectdb;
 SET hive.resultset.use.unique.column.names = false;
-SELECT model, f1 FROM evaluation;
+
 DROP TABLE IF EXISTS evaluation;
 
 
