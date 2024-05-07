@@ -1,10 +1,13 @@
-DROP DATABASE IF EXISTS team19_projectdb CASCADE;
-CREATE DATABASE team19_projectdb LOCATION "project/hive/warehouse";
 USE team19_projectdb;
 
 
 CREATE EXTERNAL TABLE IF NOT EXISTS evaluation(model STRING, f1 DOUBLE) 
-ROW FORMAT DELIMITED
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+with serdeproperties
+(
+"separatorChar" = ','
+,"quoteChar" = '"'
+)
 FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
 LOCATION 'project/output/evaluation.csv';
