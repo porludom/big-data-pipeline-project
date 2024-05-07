@@ -1,4 +1,5 @@
 USE team19_projectdb;
+SET hive.resultset.use.unique.column.names = false;
 
 DROP TABLE IF EXISTS evaluation;
 
