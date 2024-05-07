@@ -9,6 +9,6 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
    "separatorChar" = ",",
    "quoteChar"     = "\"")
-LOCATION 'project/output/evaluation.csv'
+LOCATION 'project/big-data-pipeline-project/output/evaluation.csv'
 tblproperties ("skip.header.line.count"="1");
 SELECT * FROM evaluation;
