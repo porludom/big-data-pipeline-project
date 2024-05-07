@@ -7,5 +7,6 @@ WITH SERDEPROPERTIES (
     "separatorChar" = ",",
     "quoteChar" = ""
 )
+FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
 LOCATION 'project/output/evaluation.csv';
