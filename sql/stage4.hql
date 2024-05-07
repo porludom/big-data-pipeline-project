@@ -1,9 +1,7 @@
 USE team19_projectdb;
 
 DROP TABLE IF EXISTS evaluation;
-CREATE EXTERNAL TABLE evaluation (
-    model STRING,
-    f1 DOUBLE) 
+
 
 CREATE EXTERNAL TABLE IF NOT EXISTS evaluation(model STRING, f1 DOUBLE) 
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
