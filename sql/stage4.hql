@@ -12,9 +12,9 @@ FIELDS TERMINATED BY ',';
 --   "separatorChar" = ",",
 --   "quoteChar"     = "\"")
 
---LOCATION 'project/big-data-pipeline-project/output/evaluation.csv'
+LOCATION '/project/output/evaluation.csv'
 --tblproperties ("skip.header.line.count"="1");
 
-LOAD DATA INPATH '/project/output/evaluation.csv' OVERWRITE INTO TABLE evaluation;
+--LOAD DATA INPATH '/project/output/evaluation.csv' OVERWRITE INTO TABLE evaluation;
 
 SELECT model, f1 FROM evaluation;
