@@ -1,0 +1,145 @@
+{
+  "type" : "record",
+  "name" : "weather_conditions2",
+  "doc" : "Sqoop import of weather_conditions2",
+  "fields" : [ {
+    "name" : "location_id",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "location_id",
+    "sqlType" : "4"
+  }, {
+    "name" : "last_updated_epoch",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "last_updated_epoch",
+    "sqlType" : "4"
+  }, {
+    "name" : "last_updated",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "last_updated",
+    "sqlType" : "93"
+  }, {
+    "name" : "temperature_celsius",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "temperature_celsius",
+    "sqlType" : "8"
+  }, {
+    "name" : "temperature_fahrenheit",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "temperature_fahrenheit",
+    "sqlType" : "8"
+  }, {
+    "name" : "condition_text",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "condition_text",
+    "sqlType" : "12"
+  }, {
+    "name" : "wind_mph",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "wind_mph",
+    "sqlType" : "8"
+  }, {
+    "name" : "wind_kph",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "wind_kph",
+    "sqlType" : "8"
+  }, {
+    "name" : "wind_degree",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "wind_degree",
+    "sqlType" : "4"
+  }, {
+    "name" : "wind_direction",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "wind_direction",
+    "sqlType" : "12"
+  }, {
+    "name" : "pressure_mb",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "pressure_mb",
+    "sqlType" : "8"
+  }, {
+    "name" : "pressure_in",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "pressure_in",
+    "sqlType" : "8"
+  }, {
+    "name" : "precip_mm",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "precip_mm",
+    "sqlType" : "8"
+  }, {
+    "name" : "precip_in",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "precip_in",
+    "sqlType" : "8"
+  }, {
+    "name" : "humidity",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "humidity",
+    "sqlType" : "4"
+  }, {
+    "name" : "cloud",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "cloud",
+    "sqlType" : "4"
+  }, {
+    "name" : "feels_like_celsius",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "feels_like_celsius",
+    "sqlType" : "8"
+  }, {
+    "name" : "feels_like_fahrenheit",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "feels_like_fahrenheit",
+    "sqlType" : "8"
+  }, {
+    "name" : "visibility_km",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "visibility_km",
+    "sqlType" : "8"
+  }, {
+    "name" : "visibility_miles",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "visibility_miles",
+    "sqlType" : "8"
+  }, {
+    "name" : "uv_index",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "uv_index",
+    "sqlType" : "8"
+  }, {
+    "name" : "gust_mph",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "gust_mph",
+    "sqlType" : "8"
+  }, {
+    "name" : "gust_kph",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "gust_kph",
+    "sqlType" : "8"
+  } ],
+  "tableName" : "weather_conditions2"
+}

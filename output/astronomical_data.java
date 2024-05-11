@@ -2,7 +2,7 @@
 // WARNING: This class is AUTO-GENERATED. Modify at your own risk.
 //
 // Debug information:
-// Generated date: Thu Apr 11 16:35:12 MSK 2024
+// Generated date: Sat May 11 20:38:10 MSK 2024
 // For connector: org.apache.sqoop.manager.PostgresqlManager
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.Text;
@@ -40,10 +40,10 @@ public class astronomical_data extends SqoopRecord  implements DBWritable, Writa
   public static interface FieldSetterCommand {    void setField(Object value);  }  protected ResultSet __cur_result_set;
   private Map<String, FieldSetterCommand> setters = new HashMap<String, FieldSetterCommand>();
   private void init0() {
-    setters.put("id", new FieldSetterCommand() {
+    setters.put("location_id", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
-        astronomical_data.this.id = (Integer)value;
+        astronomical_data.this.location_id = (Integer)value;
       }
     });
     setters.put("sunrise", new FieldSetterCommand() {
@@ -86,15 +86,15 @@ public class astronomical_data extends SqoopRecord  implements DBWritable, Writa
   public astronomical_data() {
     init0();
   }
-  private Integer id;
-  public Integer get_id() {
-    return id;
+  private Integer location_id;
+  public Integer get_location_id() {
+    return location_id;
   }
-  public void set_id(Integer id) {
-    this.id = id;
+  public void set_location_id(Integer location_id) {
+    this.location_id = location_id;
   }
-  public astronomical_data with_id(Integer id) {
-    this.id = id;
+  public astronomical_data with_location_id(Integer location_id) {
+    this.location_id = location_id;
     return this;
   }
   private String sunrise;
@@ -172,7 +172,7 @@ public class astronomical_data extends SqoopRecord  implements DBWritable, Writa
     }
     astronomical_data that = (astronomical_data) o;
     boolean equal = true;
-    equal = equal && (this.id == null ? that.id == null : this.id.equals(that.id));
+    equal = equal && (this.location_id == null ? that.location_id == null : this.location_id.equals(that.location_id));
     equal = equal && (this.sunrise == null ? that.sunrise == null : this.sunrise.equals(that.sunrise));
     equal = equal && (this.sunset == null ? that.sunset == null : this.sunset.equals(that.sunset));
     equal = equal && (this.moonrise == null ? that.moonrise == null : this.moonrise.equals(that.moonrise));
@@ -190,7 +190,7 @@ public class astronomical_data extends SqoopRecord  implements DBWritable, Writa
     }
     astronomical_data that = (astronomical_data) o;
     boolean equal = true;
-    equal = equal && (this.id == null ? that.id == null : this.id.equals(that.id));
+    equal = equal && (this.location_id == null ? that.location_id == null : this.location_id.equals(that.location_id));
     equal = equal && (this.sunrise == null ? that.sunrise == null : this.sunrise.equals(that.sunrise));
     equal = equal && (this.sunset == null ? that.sunset == null : this.sunset.equals(that.sunset));
     equal = equal && (this.moonrise == null ? that.moonrise == null : this.moonrise.equals(that.moonrise));
@@ -201,7 +201,7 @@ public class astronomical_data extends SqoopRecord  implements DBWritable, Writa
   }
   public void readFields(ResultSet __dbResults) throws SQLException {
     this.__cur_result_set = __dbResults;
-    this.id = JdbcWritableBridge.readInteger(1, __dbResults);
+    this.location_id = JdbcWritableBridge.readInteger(1, __dbResults);
     this.sunrise = JdbcWritableBridge.readString(2, __dbResults);
     this.sunset = JdbcWritableBridge.readString(3, __dbResults);
     this.moonrise = JdbcWritableBridge.readString(4, __dbResults);
@@ -210,7 +210,7 @@ public class astronomical_data extends SqoopRecord  implements DBWritable, Writa
     this.moon_illumination = JdbcWritableBridge.readInteger(7, __dbResults);
   }
   public void readFields0(ResultSet __dbResults) throws SQLException {
-    this.id = JdbcWritableBridge.readInteger(1, __dbResults);
+    this.location_id = JdbcWritableBridge.readInteger(1, __dbResults);
     this.sunrise = JdbcWritableBridge.readString(2, __dbResults);
     this.sunset = JdbcWritableBridge.readString(3, __dbResults);
     this.moonrise = JdbcWritableBridge.readString(4, __dbResults);
@@ -229,7 +229,7 @@ public class astronomical_data extends SqoopRecord  implements DBWritable, Writa
   }
 
   public int write(PreparedStatement __dbStmt, int __off) throws SQLException {
-    JdbcWritableBridge.writeInteger(id, 1 + __off, 4, __dbStmt);
+    JdbcWritableBridge.writeInteger(location_id, 1 + __off, 4, __dbStmt);
     JdbcWritableBridge.writeString(sunrise, 2 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeString(sunset, 3 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeString(moonrise, 4 + __off, 12, __dbStmt);
@@ -239,7 +239,7 @@ public class astronomical_data extends SqoopRecord  implements DBWritable, Writa
     return 7;
   }
   public void write0(PreparedStatement __dbStmt, int __off) throws SQLException {
-    JdbcWritableBridge.writeInteger(id, 1 + __off, 4, __dbStmt);
+    JdbcWritableBridge.writeInteger(location_id, 1 + __off, 4, __dbStmt);
     JdbcWritableBridge.writeString(sunrise, 2 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeString(sunset, 3 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeString(moonrise, 4 + __off, 12, __dbStmt);
@@ -251,9 +251,9 @@ public class astronomical_data extends SqoopRecord  implements DBWritable, Writa
 this.readFields0(__dataIn);  }
   public void readFields0(DataInput __dataIn) throws IOException {
     if (__dataIn.readBoolean()) { 
-        this.id = null;
+        this.location_id = null;
     } else {
-    this.id = Integer.valueOf(__dataIn.readInt());
+    this.location_id = Integer.valueOf(__dataIn.readInt());
     }
     if (__dataIn.readBoolean()) { 
         this.sunrise = null;
@@ -287,11 +287,11 @@ this.readFields0(__dataIn);  }
     }
   }
   public void write(DataOutput __dataOut) throws IOException {
-    if (null == this.id) { 
+    if (null == this.location_id) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeInt(this.id);
+    __dataOut.writeInt(this.location_id);
     }
     if (null == this.sunrise) { 
         __dataOut.writeBoolean(true);
@@ -331,11 +331,11 @@ this.readFields0(__dataIn);  }
     }
   }
   public void write0(DataOutput __dataOut) throws IOException {
-    if (null == this.id) { 
+    if (null == this.location_id) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeInt(this.id);
+    __dataOut.writeInt(this.location_id);
     }
     if (null == this.sunrise) { 
         __dataOut.writeBoolean(true);
@@ -387,7 +387,7 @@ this.readFields0(__dataIn);  }
   public String toString(DelimiterSet delimiters, boolean useRecordDelim) {
     StringBuilder __sb = new StringBuilder();
     char fieldDelim = delimiters.getFieldsTerminatedBy();
-    __sb.append(FieldFormatter.escapeAndEnclose(id==null?"null":"" + id, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(location_id==null?"null":"" + location_id, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(sunrise==null?"null":sunrise, delimiters));
     __sb.append(fieldDelim);
@@ -406,7 +406,7 @@ this.readFields0(__dataIn);  }
     return __sb.toString();
   }
   public void toString0(DelimiterSet delimiters, StringBuilder __sb, char fieldDelim) {
-    __sb.append(FieldFormatter.escapeAndEnclose(id==null?"null":"" + id, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(location_id==null?"null":"" + location_id, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(sunrise==null?"null":sunrise, delimiters));
     __sb.append(fieldDelim);
@@ -479,8 +479,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.id = null; } else {
-      this.id = Integer.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.location_id = null; } else {
+      this.location_id = Integer.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -547,8 +547,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.id = null; } else {
-      this.id = Integer.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.location_id = null; } else {
+      this.location_id = Integer.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -617,7 +617,7 @@ this.readFields0(__dataIn);  }
 
   public Map<String, Object> getFieldMap() {
     Map<String, Object> __sqoop$field_map = new HashMap<String, Object>();
-    __sqoop$field_map.put("id", this.id);
+    __sqoop$field_map.put("location_id", this.location_id);
     __sqoop$field_map.put("sunrise", this.sunrise);
     __sqoop$field_map.put("sunset", this.sunset);
     __sqoop$field_map.put("moonrise", this.moonrise);
@@ -628,7 +628,7 @@ this.readFields0(__dataIn);  }
   }
 
   public void getFieldMap0(Map<String, Object> __sqoop$field_map) {
-    __sqoop$field_map.put("id", this.id);
+    __sqoop$field_map.put("location_id", this.location_id);
     __sqoop$field_map.put("sunrise", this.sunrise);
     __sqoop$field_map.put("sunset", this.sunset);
     __sqoop$field_map.put("moonrise", this.moonrise);

@@ -4,10 +4,10 @@
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team19_projectdb;
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- Create table for car prices
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE air_quality STORED AS AVRO LOCATION 'project/wareho use/air_quality' TBLPROPERTIES ('avro.schema.url' = 'project/warehouse/avsc/air_quality.avsc');
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE astronomical_data STORED AS AVRO LOCATION 'project/ warehouse/astronomical_data' TBLPROPERTIES ('avro.schema.url' = 'project/warehouse/avsc/astronomical_data.avsc');
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE locations STORED AS AVRO LOCATION 'project/warehous e/locations' TBLPROPERTIES ('avro.schema.url' = 'project/warehouse/avsc/locations.avsc');
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE weather_conditions STORED AS AVRO LOCATION 'project /warehouse/weather_conditions' TBLPROPERTIES ('avro.schema.url' = 'project/warehouse/avsc/weather_conditions.avsc');
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE air_quality STORED AS AVRO LOCATION 'project/warehouse/air _quality' TBLPROPERTIES ('avro.schema.url' = 'project/warehouse/avsc/air_quality.avsc');
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE astronomical_data STORED AS AVRO LOCATION 'project/warehou se/astronomical_data' TBLPROPERTIES ('avro.schema.url' = 'project/warehouse/avsc/astronomical_data.avsc');
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE locations STORED AS AVRO LOCATION 'project/warehouse/locat ions' TBLPROPERTIES ('avro.schema.url' = 'project/warehouse/avsc/locations.avsc');
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE weather_conditions STORED AS AVRO LOCATION 'project/wareho use/weather_conditions' TBLPROPERTIES ('avro.schema.url' = 'project/warehouse/avsc/weather_conditions.avsc');
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- For checking the content of tables
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> -- SELECT * FROM weather_conditions LIMIT 10;

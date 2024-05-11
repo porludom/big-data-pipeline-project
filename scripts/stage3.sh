@@ -1,1 +1,1 @@
-python3 ml.py
+python3 ~/project/big-data-pipeline-project/scripts/ml.py

@@ -3,8 +3,8 @@ USE team19_projectdb;
 DROP TABLE IF EXISTS q3_results;
 
 CREATE EXTERNAL TABLE q3_results(
-    Country VARCHAR,
-    Most_Common_Condition VARCHAR,
+    Country string,
+    Most_Common_Condition string,
     Frequency INT
 )
 ROW FORMAT DELIMITED 
@@ -21,7 +21,7 @@ WITH ConditionCounts AS (
     FROM
         locations loc
     JOIN
-        weather_conditions wc ON loc.id = wc.id
+        weather_conditions wc ON loc.id = wc.location_id
     GROUP BY
         loc.country, wc.condition_text
 ),

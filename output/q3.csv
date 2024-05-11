@@ -3,10 +3,243 @@
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE IF EXISTS q3_results;
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE q3_results(
-. . . . . . . . . . . . . . . . . . . . . . .>     Country VARCHAR,
-. . . . . . . . . . . . . . . . . . . . . . .>     Most_Common_Condition VARCHAR,
+. . . . . . . . . . . . . . . . . . . . . . .>     Country string,
+. . . . . . . . . . . . . . . . . . . . . . .>     Most_Common_Condition string,
 . . . . . . . . . . . . . . . . . . . . . . .>     Frequency INT
 . . . . . . . . . . . . . . . . . . . . . . .> )
 . . . . . . . . . . . . . . . . . . . . . . .> ROW FORMAT DELIMITED 
 . . . . . . . . . . . . . . . . . . . . . . .> FIELDS TERMINATED BY ',' 
 . . . . . . . . . . . . . . . . . . . . . . .> LOCATION 'project/hive/warehouse/q3';
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.resultset.use.unique.column.names = false;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> WITH ConditionCounts AS (
+. . . . . . . . . . . . . . . . . . . . . . .>     SELECT
+. . . . . . . . . . . . . . . . . . . . . . .>         loc.country,
+. . . . . . . . . . . . . . . . . . . . . . .>         wc.condition_text,
+. . . . . . . . . . . . . . . . . . . . . . .>         COUNT(*) AS condition_count
+. . . . . . . . . . . . . . . . . . . . . . .>     FROM
+. . . . . . . . . . . . . . . . . . . . . . .>         locations loc
+. . . . . . . . . . . . . . . . . . . . . . .>     JOIN
+. . . . . . . . . . . . . . . . . . . . . . .>         weather_conditions wc ON loc.id = wc.location_id
+. . . . . . . . . . . . . . . . . . . . . . .>     GROUP BY
+. . . . . . . . . . . . . . . . . . . . . . .>         loc.country, wc.condition_text
+. . . . . . . . . . . . . . . . . . . . . . .> ),
+. . . . . . . . . . . . . . . . . . . . . . .> MaxConditions AS (
+. . . . . . . . . . . . . . . . . . . . . . .>     SELECT
+. . . . . . . . . . . . . . . . . . . . . . .>         country,
+. . . . . . . . . . . . . . . . . . . . . . .>         MAX(condition_count) AS max_count
+. . . . . . . . . . . . . . . . . . . . . . .>     FROM
+. . . . . . . . . . . . . . . . . . . . . . .>         ConditionCounts
+. . . . . . . . . . . . . . . . . . . . . . .>     GROUP BY
+. . . . . . . . . . . . . . . . . . . . . . .>         country
+. . . . . . . . . . . . . . . . . . . . . . .> )
+. . . . . . . . . . . . . . . . . . . . . . .> 
+. . . . . . . . . . . . . . . . . . . . . . .> INSERT INTO TABLE q3_results
+. . . . . . . . . . . . . . . . . . . . . . .> SELECT
+. . . . . . . . . . . . . . . . . . . . . . .>     cc.country AS Country,
+. . . . . . . . . . . . . . . . . . . . . . .>     cc.condition_text AS Most_Common_Condition,
+. . . . . . . . . . . . . . . . . . . . . . .>     cc.condition_count AS Frequency
+. . . . . . . . . . . . . . . . . . . . . . .> FROM
+. . . . . . . . . . . . . . . . . . . . . . .>     ConditionCounts cc
+. . . . . . . . . . . . . . . . . . . . . . .> JOIN
+. . . . . . . . . . . . . . . . . . . . . . .>     MaxConditions mc ON cc.country = mc.country AND cc.condition_count = mc.max_ count
+. . . . . . . . . . . . . . . . . . . . . . .> ORDER BY
+. . . . . . . . . . . . . . . . . . . . . . .>     cc.country, cc.condition_count DESC;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SELECT *
+. . . . . . . . . . . . . . . . . . . . . . .> FROM q3_results;
++-----------------------------------+------------------------+------------+
+|              country              | most_common_condition  | frequency  |
++-----------------------------------+------------------------+------------+
+| Afghanistan                       | Clear                  | 120        |
+| Albania                           | Clear                  | 92         |
+| Algeria                           | Partly cloudy          | 130        |
+| Andorra                           | Clear                  | 68         |
+| Angola                            | Partly cloudy          | 186        |
+| Antigua and Barbuda               | Partly cloudy          | 172        |
+| Argentina                         | Sunny                  | 105        |
+| Armenia                           | Clear                  | 100        |
+| Australia                         | Overcast               | 59         |
+| Austria                           | Clear                  | 88         |
+| Azerbaijan                        | Clear                  | 88         |
+| Bahamas                           | Partly cloudy          | 178        |
+| Bahrain                           | Clear                  | 191        |
+| Bangladesh                        | Clear                  | 92         |
+| Barbados                          | Partly cloudy          | 163        |
+| Belarus                           | Clear                  | 64         |
+| Belgium                           | Partly cloudy          | 143        |
+| Belize                            | Partly cloudy          | 176        |
+| Benin                             | Partly cloudy          | 152        |
+| Bhutan                            | Clear                  | 65         |
+| Bolivia                           | Sunny                  | 127        |
+| Bosnia and Herzegovina            | Clear                  | 86         |
+| Botswana                          | Clear                  | 104        |
+| Brazil                            | Partly cloudy          | 38         |
+| Brunei Darussalam                 | Partly cloudy          | 162        |
+| Bulgaria                          | Clear                  | 231        |
+| Burkina Faso                      | Clear                  | 92         |
+| Burundi                           | Partly cloudy          | 75         |
+| Cambodia                          | Partly cloudy          | 190        |
+| Cameroon                          | Clear                  | 53         |
+| Canada                            | Partly cloudy          | 122        |
+| Cape Verde                        | Partly cloudy          | 126        |
+| Central African Republic          | Clear                  | 70         |
+| Chad                              | Clear                  | 84         |
+| Chile                             | Sunny                  | 156        |
+| China                             | Clear                  | 166        |
+| Comoros                           | Clear                  | 95         |
+| Congo                             | Partly cloudy          | 79         |
+| Costa Rica                        | Partly cloudy          | 130        |
+| Croatia                           | Clear                  | 120        |
+| Cuba                              | Partly cloudy          | 193        |
+| Cyprus                            | Partly cloudy          | 145        |
+| Czech Republic                    | Clear                  | 97         |
+| Democratic Republic of Congo      | Partly cloudy          | 81         |
+| Denmark                           | Partly cloudy          | 83         |
+| Djibouti                          | Partly cloudy          | 102        |
+| Dominica                          | Partly cloudy          | 188        |
+| Dominican Republic                | Partly cloudy          | 184        |
+| Ecuador                           | Patchy rain possible   | 69         |
+| Egypt                             | Clear                  | 130        |
+| El Salvador                       | Partly cloudy          | 132        |
+| Equatorial Guinea                 | Partly cloudy          | 122        |
+| Eritrea                           | Clear                  | 80         |
+| Estonia                           | Partly cloudy          | 52         |
+| Ethiopia                          | Partly cloudy          | 146        |
+| Fiji Islands                      | Partly cloudy          | 185        |
+| Finland                           | Partly cloudy          | 87         |
+| France                            | Clear                  | 62         |
+| Gabon                             | Partly cloudy          | 142        |
+| Gambia                            | Sunny                  | 99         |
+| Georgia                           | Clear                  | 134        |
+| Germany                           | Clear                  | 82         |
+| Ghana                             | Partly cloudy          | 117        |
+| Greece                            | Partly cloudy          | 157        |
+| Grenada                           | Partly cloudy          | 176        |
+| Guatemala                         | Partly cloudy          | 145        |
+| Guinea                            | Partly cloudy          | 78         |
+| Guinea-Bissau                     | Sunny                  | 95         |
+| Guyana                            | Partly cloudy          | 172        |
+| Haiti                             | Partly cloudy          | 183        |
+| Honduras                          | Partly cloudy          | 179        |
+| Hungary                           | Clear                  | 126        |
+| Iceland                           | Partly cloudy          | 72         |
+| India                             | Mist                   | 170        |
+| Indonesia                         | Partly cloudy          | 134        |
+| Iran                              | Clear                  | 119        |
+| Iraq                              | Clear                  | 101        |
+| Ireland                           | Partly cloudy          | 154        |
+| Israel                            | Clear                  | 108        |
+| Italy                             | Clear                  | 115        |
+| Jamaica                           | Partly cloudy          | 186        |
+| Japan                             | Partly cloudy          | 112        |
+| Jordan                            | Clear                  | 92         |
+| Kazakhstan                        | Clear                  | 75         |
+| Kenya                             | Partly cloudy          | 186        |
+| Kiribati                          | Patchy rain possible   | 47         |
+| Kuwait                            | Clear                  | 158        |
+| Kyrghyzstan                       | Clear                  | 74         |
+| Latvia                            | Overcast               | 54         |
+| Lebanon                           | Partly cloudy          | 107        |
+| Lesotho                           | Clear                  | 97         |
+| Liberia                           | Partly cloudy          | 101        |
+| Liechtenstein                     | Clear                  | 75         |
+| Lithuania                         | Clear                  | 53         |
+| Luxembourg                        | Partly cloudy          | 78         |
+| Macedonia                         | Partly cloudy          | 91         |
+| Madagascar                        | Partly cloudy          | 148        |
+| Malawi                            | Clear                  | 99         |
+| Malaysia                          | Partly cloudy          | 190        |
+| Maldives                          | Patchy rain possible   | 49         |
++-----------------------------------+------------------------+------------+
+|              country              | most_common_condition  | frequency  |
++-----------------------------------+------------------------+------------+
+| Mali                              | Sunny                  | 74         |
+| Malta                             | Partly cloudy          | 115        |
+| Marshall Islands                  | Overcast               | 103        |
+| Mauritania                        | Clear                  | 94         |
+| Mauritius                         | Partly cloudy          | 121        |
+| Mexico                            | Partly cloudy          | 106        |
+| Micronesia                        | Overcast               | 100        |
+| Monaco                            | Clear                  | 95         |
+| Mongolia                          | Clear                  | 113        |
+| Montenegro                        | Clear                  | 89         |
+| Morocco                           | Partly cloudy          | 90         |
+| Mozambique                        | Partly cloudy          | 164        |
+| Myanmar                           | Clear                  | 99         |
+| Namibia                           | Clear                  | 135        |
+| Nepal                             | Partly cloudy          | 190        |
+| Netherlands                       | Partly cloudy          | 83         |
+| New Zealand                       | Partly cloudy          | 73         |
+| Nicaragua                         | Partly cloudy          | 186        |
+| Niger                             | Clear                  | 110        |
+| Nigeria                           | Clear                  | 81         |
+| North Korea                       | Clear                  | 56         |
+| Norway                            | Partly cloudy          | 107        |
+| Oman                              | Clear                  | 176        |
+| Pakistan                          | Clear                  | 103        |
+| Palau                             | Partly cloudy          | 147        |
+| Panama                            | Partly cloudy          | 177        |
+| Papua New Guinea                  | Partly cloudy          | 144        |
+| Paraguay                          | Sunny                  | 77         |
+| Peru                              | Sunny                  | 102        |
+| Philippines                       | Partly cloudy          | 186        |
+| Poland                            | Clear                  | 78         |
+| Portugal                          | Partly cloudy          | 122        |
+| Qatar                             | Clear                  | 191        |
+| Romania                           | Clear                  | 144        |
+| Russia                            | Clear                  | 97         |
+| Rwanda                            | Partly cloudy          | 195        |
+| Saint Kitts and Nevis             | Partly cloudy          | 185        |
+| Saint Lucia                       | Partly cloudy          | 180        |
+| Saint Vincent and the Grenadines  | Partly cloudy          | 95         |
+| Samoa                             | Partly cloudy          | 175        |
+| San Marino                        | Clear                  | 79         |
+| Saudi Arabia                      | Clear                  | 174        |
+| Senegal                           | Sunny                  | 105        |
+| Serbia                            | Clear                  | 153        |
+| Seychelles Islands                | Partly cloudy          | 184        |
+| Sierra Leone                      | Mist                   | 67         |
+| Singapore                         | Partly cloudy          | 195        |
+| Slovakia                          | Clear                  | 101        |
+| Slovenia                          | Partly cloudy          | 83         |
+| Solomon Islands                   | Partly cloudy          | 94         |
+| Somalia                           | Clear                  | 73         |
+| South Africa                      | Clear                  | 192        |
+| South Korea                       | Clear                  | 93         |
+| Spain                             | Clear                  | 94         |
+| Sri Lanka                         | Partly cloudy          | 155        |
+| Sudan                             | Clear                  | 257        |
+| Suriname                          | Partly cloudy          | 121        |
+| Swaziland                         | Clear                  | 58         |
+| Sweden                            | Partly cloudy          | 77         |
+| Switzerland                       | Partly cloudy          | 90         |
+| Syria                             | Clear                  | 134        |
+| Tajikistan                        | Clear                  | 83         |
+| Tanzania                          | Clear                  | 77         |
+| Thailand                          | Partly cloudy          | 222        |
+| Timor-Leste                       | Clear                  | 72         |
+| Tonga                             | Partly cloudy          | 180        |
+| Trinidad and Tobago               | Partly cloudy          | 107        |
+| Tunisia                           | Partly cloudy          | 193        |
+| Turkey                            | Clear                  | 199        |
+| Turkmenistan                      | Clear                  | 92         |
+| Tuvalu                            | Partly cloudy          | 158        |
+| Uganda                            | Partly cloudy          | 146        |
+| Ukraine                           | Clear                  | 49         |
+| United Arab Emirates              | Clear                  | 180        |
+| United Kingdom                    | Partly cloudy          | 83         |
+| United States of America          | Sunny                  | 104        |
+| Uruguay                           | Partly cloudy          | 113        |
+| Uzbekistan                        | Clear                  | 84         |
+| Vanuatu                           | Partly cloudy          | 141        |
+| Vatican City                      | Clear                  | 115        |
+| Venezuela                         | Partly cloudy          | 119        |
+| Vietnam                           | Clear                  | 52         |
+| Yemen                             | Clear                  | 113        |
+| Zambia                            | Clear                  | 97         |
+| Zimbabwe                          | Clear                  | 97         |
++-----------------------------------+------------------------+------------+
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 

@@ -19,7 +19,7 @@ SELECT
     AVG(temperature_celsius) AS avg_temp,
     AVG(humidity) AS avg_humidity
 FROM astronomical_data_part ast
-JOIN weather_conditions w ON ast.location_id = w.id
+JOIN weather_conditions w ON ast.location_id = w.location_id
 GROUP BY moon_phase;
 
 

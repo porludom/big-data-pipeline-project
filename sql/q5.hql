@@ -22,7 +22,7 @@ SELECT
 FROM
     weather_conditions
 JOIN
-    air_quality ON weather_conditions.id = air_quality.id  
+    air_quality ON weather_conditions.location_id = air_quality.location_id  
 GROUP BY
     temperature_celsius
 ORDER BY

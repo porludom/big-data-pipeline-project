@@ -16,15 +16,15 @@ TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY');
 
 SHOW PARTITIONS astronomical_data_part;
 
-SET hive.exec.dynamic.partition.mode=nonstrict;
-INSERT INTO astronomical_data_part partition (moon_phase)
-    (SELECT id,
+-- SET hive.exec.dynamic.partition.mode=nonstrict;
+INSERT INTO astronomical_data_part 
+    SELECT location_id,
         sunrise,
         sunset,
         moonrise,
         moonset,
-        moon_illumination,
-        moon_phase
-FROM astronomical_data);
+        moon_phase,
+        moon_illumination
+    FROM astronomical_data;
 
-DROP TABLE astronomical_data;
+drop table astronomical_data;

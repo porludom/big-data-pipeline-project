@@ -34,14 +34,13 @@ spark = SparkSession.builder\
         .getOrCreate()
 
 air_quality = spark.read.format("avro").table('team19_projectdb.air_quality')
-astronomical_data = spark.read.format("avro")\
-                            .table('team19_projectdb.astronomical_data_part')
 locations = spark.read.format("avro").table('team19_projectdb.locations')
 weather_conditions = spark.read.format("avro")\
                         .table('team19_projectdb.weather_conditions')
 
-table_for_ML = air_quality.join(locations, on=["id"], how="inner")\
-                          .join(weather_conditions, on=["id"], how="inner")
+table_for_ML = air_quality.join(locations.withColumnRenamed("id", "location_id"), \
+                                on=["location_id"], how="inner")\
+                          .join(weather_conditions, on=["location_id"], how="inner")
 
 
 class LatLongToECEF(Transformer, DefaultParamsReadable, DefaultParamsWritable):
@@ -127,9 +126,17 @@ cv = CrossValidator(estimator=classifier_1,
 cvModel = cv.fit(train_data)
 bestModel_1 = cvModel.bestModel
 predictions = bestModel_1.transform(test_data)
+
+evaluator_acc = MulticlassClassificationEvaluator()\
+  .setLabelCol("label")\
+  .setPredictionCol("prediction")\
+  .setMetricName("accuracy")
+
 f1_1 = evaluator.evaluate(predictions)
+accuracy_1 = evaluator_acc.evaluate(predictions)
 
 bestModel_1.write().overwrite().save("project/models/model1")
+
 predictions.select(predictions['label'], predictions["prediction"])\
             .coalesce(1).write.csv('project/output/model1_predictions',
                                    header=True,
@@ -166,6 +173,13 @@ bestModel_2 = cvModel.bestModel
 
 predictions = bestModel_2.transform(test_data)
 
+evaluator_acc = MulticlassClassificationEvaluator()\
+  .setLabelCol("label")\
+  .setPredictionCol("prediction")\
+  .setMetricName("accuracy")
+
+accuracy_2 = evaluator_acc.evaluate(predictions)
+
 f1_2 = evaluator.evaluate(predictions)
 
 print("Saving everything from ML part")
@@ -189,7 +203,8 @@ run("hdfs dfs -get project/models/model2 \
 
 comparison_data = {
     'model': [bestModel_1, bestModel_2],
-    'f1': [f1_1, f1_2]
+    'f1': [f1_1, f1_2],
+    'accuracy': [accuracy_1, accuracy_2]
 }
 
 # Create a Pandas DataFrame from the dictionary
@@ -197,7 +212,8 @@ comparison_df = pd.DataFrame(comparison_data)
 
 comparison_df\
         .to_csv("~/project/big-data-pipeline-project/output/evaluation.csv",
-                index=False)
+                index=False,
+                header=True)
 
 run("hdfs dfs -put ~/project/big-data-pipeline-project/output/evaluation.csv \
 project/output/evaluation.csv")

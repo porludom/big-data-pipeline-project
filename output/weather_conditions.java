@@ -2,7 +2,7 @@
 // WARNING: This class is AUTO-GENERATED. Modify at your own risk.
 //
 // Debug information:
-// Generated date: Thu Apr 11 16:35:49 MSK 2024
+// Generated date: Sat May 11 20:37:58 MSK 2024
 // For connector: org.apache.sqoop.manager.PostgresqlManager
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.Text;
@@ -40,10 +40,10 @@ public class weather_conditions extends SqoopRecord  implements DBWritable, Writ
   public static interface FieldSetterCommand {    void setField(Object value);  }  protected ResultSet __cur_result_set;
   private Map<String, FieldSetterCommand> setters = new HashMap<String, FieldSetterCommand>();
   private void init0() {
-    setters.put("id", new FieldSetterCommand() {
+    setters.put("location_id", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
-        weather_conditions.this.id = (Integer)value;
+        weather_conditions.this.location_id = (Integer)value;
       }
     });
     setters.put("last_updated_epoch", new FieldSetterCommand() {
@@ -182,15 +182,15 @@ public class weather_conditions extends SqoopRecord  implements DBWritable, Writ
   public weather_conditions() {
     init0();
   }
-  private Integer id;
-  public Integer get_id() {
-    return id;
+  private Integer location_id;
+  public Integer get_location_id() {
+    return location_id;
   }
-  public void set_id(Integer id) {
-    this.id = id;
+  public void set_location_id(Integer location_id) {
+    this.location_id = location_id;
   }
-  public weather_conditions with_id(Integer id) {
-    this.id = id;
+  public weather_conditions with_location_id(Integer location_id) {
+    this.location_id = location_id;
     return this;
   }
   private Integer last_updated_epoch;
@@ -444,7 +444,7 @@ public class weather_conditions extends SqoopRecord  implements DBWritable, Writ
     }
     weather_conditions that = (weather_conditions) o;
     boolean equal = true;
-    equal = equal && (this.id == null ? that.id == null : this.id.equals(that.id));
+    equal = equal && (this.location_id == null ? that.location_id == null : this.location_id.equals(that.location_id));
     equal = equal && (this.last_updated_epoch == null ? that.last_updated_epoch == null : this.last_updated_epoch.equals(that.last_updated_epoch));
     equal = equal && (this.last_updated == null ? that.last_updated == null : this.last_updated.equals(that.last_updated));
     equal = equal && (this.temperature_celsius == null ? that.temperature_celsius == null : this.temperature_celsius.equals(that.temperature_celsius));
@@ -478,7 +478,7 @@ public class weather_conditions extends SqoopRecord  implements DBWritable, Writ
     }
     weather_conditions that = (weather_conditions) o;
     boolean equal = true;
-    equal = equal && (this.id == null ? that.id == null : this.id.equals(that.id));
+    equal = equal && (this.location_id == null ? that.location_id == null : this.location_id.equals(that.location_id));
     equal = equal && (this.last_updated_epoch == null ? that.last_updated_epoch == null : this.last_updated_epoch.equals(that.last_updated_epoch));
     equal = equal && (this.last_updated == null ? that.last_updated == null : this.last_updated.equals(that.last_updated));
     equal = equal && (this.temperature_celsius == null ? that.temperature_celsius == null : this.temperature_celsius.equals(that.temperature_celsius));
@@ -505,7 +505,7 @@ public class weather_conditions extends SqoopRecord  implements DBWritable, Writ
   }
   public void readFields(ResultSet __dbResults) throws SQLException {
     this.__cur_result_set = __dbResults;
-    this.id = JdbcWritableBridge.readInteger(1, __dbResults);
+    this.location_id = JdbcWritableBridge.readInteger(1, __dbResults);
     this.last_updated_epoch = JdbcWritableBridge.readInteger(2, __dbResults);
     this.last_updated = JdbcWritableBridge.readTimestamp(3, __dbResults);
     this.temperature_celsius = JdbcWritableBridge.readDouble(4, __dbResults);
@@ -530,7 +530,7 @@ public class weather_conditions extends SqoopRecord  implements DBWritable, Writ
     this.gust_kph = JdbcWritableBridge.readDouble(23, __dbResults);
   }
   public void readFields0(ResultSet __dbResults) throws SQLException {
-    this.id = JdbcWritableBridge.readInteger(1, __dbResults);
+    this.location_id = JdbcWritableBridge.readInteger(1, __dbResults);
     this.last_updated_epoch = JdbcWritableBridge.readInteger(2, __dbResults);
     this.last_updated = JdbcWritableBridge.readTimestamp(3, __dbResults);
     this.temperature_celsius = JdbcWritableBridge.readDouble(4, __dbResults);
@@ -565,7 +565,7 @@ public class weather_conditions extends SqoopRecord  implements DBWritable, Writ
   }
 
   public int write(PreparedStatement __dbStmt, int __off) throws SQLException {
-    JdbcWritableBridge.writeInteger(id, 1 + __off, 4, __dbStmt);
+    JdbcWritableBridge.writeInteger(location_id, 1 + __off, 4, __dbStmt);
     JdbcWritableBridge.writeInteger(last_updated_epoch, 2 + __off, 4, __dbStmt);
     JdbcWritableBridge.writeTimestamp(last_updated, 3 + __off, 93, __dbStmt);
     JdbcWritableBridge.writeDouble(temperature_celsius, 4 + __off, 8, __dbStmt);
@@ -591,7 +591,7 @@ public class weather_conditions extends SqoopRecord  implements DBWritable, Writ
     return 23;
   }
   public void write0(PreparedStatement __dbStmt, int __off) throws SQLException {
-    JdbcWritableBridge.writeInteger(id, 1 + __off, 4, __dbStmt);
+    JdbcWritableBridge.writeInteger(location_id, 1 + __off, 4, __dbStmt);
     JdbcWritableBridge.writeInteger(last_updated_epoch, 2 + __off, 4, __dbStmt);
     JdbcWritableBridge.writeTimestamp(last_updated, 3 + __off, 93, __dbStmt);
     JdbcWritableBridge.writeDouble(temperature_celsius, 4 + __off, 8, __dbStmt);
@@ -619,9 +619,9 @@ public class weather_conditions extends SqoopRecord  implements DBWritable, Writ
 this.readFields0(__dataIn);  }
   public void readFields0(DataInput __dataIn) throws IOException {
     if (__dataIn.readBoolean()) { 
-        this.id = null;
+        this.location_id = null;
     } else {
-    this.id = Integer.valueOf(__dataIn.readInt());
+    this.location_id = Integer.valueOf(__dataIn.readInt());
     }
     if (__dataIn.readBoolean()) { 
         this.last_updated_epoch = null;
@@ -736,11 +736,11 @@ this.readFields0(__dataIn);  }
     }
   }
   public void write(DataOutput __dataOut) throws IOException {
-    if (null == this.id) { 
+    if (null == this.location_id) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeInt(this.id);
+    __dataOut.writeInt(this.location_id);
     }
     if (null == this.last_updated_epoch) { 
         __dataOut.writeBoolean(true);
@@ -877,11 +877,11 @@ this.readFields0(__dataIn);  }
     }
   }
   public void write0(DataOutput __dataOut) throws IOException {
-    if (null == this.id) { 
+    if (null == this.location_id) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeInt(this.id);
+    __dataOut.writeInt(this.location_id);
     }
     if (null == this.last_updated_epoch) { 
         __dataOut.writeBoolean(true);
@@ -1030,7 +1030,7 @@ this.readFields0(__dataIn);  }
   public String toString(DelimiterSet delimiters, boolean useRecordDelim) {
     StringBuilder __sb = new StringBuilder();
     char fieldDelim = delimiters.getFieldsTerminatedBy();
-    __sb.append(FieldFormatter.escapeAndEnclose(id==null?"null":"" + id, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(location_id==null?"null":"" + location_id, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(last_updated_epoch==null?"null":"" + last_updated_epoch, delimiters));
     __sb.append(fieldDelim);
@@ -1081,7 +1081,7 @@ this.readFields0(__dataIn);  }
     return __sb.toString();
   }
   public void toString0(DelimiterSet delimiters, StringBuilder __sb, char fieldDelim) {
-    __sb.append(FieldFormatter.escapeAndEnclose(id==null?"null":"" + id, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(location_id==null?"null":"" + location_id, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(last_updated_epoch==null?"null":"" + last_updated_epoch, delimiters));
     __sb.append(fieldDelim);
@@ -1186,8 +1186,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.id = null; } else {
-      this.id = Integer.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.location_id = null; } else {
+      this.location_id = Integer.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -1398,8 +1398,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.id = null; } else {
-      this.id = Integer.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.location_id = null; } else {
+      this.location_id = Integer.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -1614,7 +1614,7 @@ this.readFields0(__dataIn);  }
 
   public Map<String, Object> getFieldMap() {
     Map<String, Object> __sqoop$field_map = new HashMap<String, Object>();
-    __sqoop$field_map.put("id", this.id);
+    __sqoop$field_map.put("location_id", this.location_id);
     __sqoop$field_map.put("last_updated_epoch", this.last_updated_epoch);
     __sqoop$field_map.put("last_updated", this.last_updated);
     __sqoop$field_map.put("temperature_celsius", this.temperature_celsius);
@@ -1641,7 +1641,7 @@ this.readFields0(__dataIn);  }
   }
 
   public void getFieldMap0(Map<String, Object> __sqoop$field_map) {
-    __sqoop$field_map.put("id", this.id);
+    __sqoop$field_map.put("location_id", this.location_id);
     __sqoop$field_map.put("last_updated_epoch", this.last_updated_epoch);
     __sqoop$field_map.put("last_updated", this.last_updated);
     __sqoop$field_map.put("temperature_celsius", this.temperature_celsius);

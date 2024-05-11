@@ -1,3 +1,3 @@
-model,f1
-"DecisionTreeClassificationModel: uid=DecisionTreeClassifier_6d7bda352658, depth=10, numNodes=1025, numClasses=53, numFeatures=20",0.782443345951287
-"RandomForestClassificationModel: uid=RandomForestClassifier_f9c3288b9c00, numTrees=20, numClasses=53, numFeatures=20",0.6926036456852962
+model,f1,accuracy
+"DecisionTreeClassificationModel: uid=DecisionTreeClassifier_7723bcfdf519, depth=10, numNodes=1043, numClasses=53, numFeatures=20",0.7880149351239378,0.8123410268487988
+"RandomForestClassificationModel: uid=RandomForestClassifier_6b406e9ff357, numTrees=20, numClasses=53, numFeatures=20",0.7111324492617799,0.771172868582195

@@ -3,10 +3,10 @@
   "name" : "weather_conditions",
   "doc" : "Sqoop import of weather_conditions",
   "fields" : [ {
-    "name" : "id",
+    "name" : "location_id",
     "type" : [ "null", "int" ],
     "default" : null,
-    "columnName" : "id",
+    "columnName" : "location_id",
     "sqlType" : "4"
   }, {
     "name" : "last_updated_epoch",

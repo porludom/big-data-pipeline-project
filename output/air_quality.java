@@ -2,7 +2,7 @@
 // WARNING: This class is AUTO-GENERATED. Modify at your own risk.
 //
 // Debug information:
-// Generated date: Thu Apr 11 16:35:37 MSK 2024
+// Generated date: Sat May 11 20:38:22 MSK 2024
 // For connector: org.apache.sqoop.manager.PostgresqlManager
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.Text;
@@ -40,46 +40,46 @@ public class air_quality extends SqoopRecord  implements DBWritable, Writable {
   public static interface FieldSetterCommand {    void setField(Object value);  }  protected ResultSet __cur_result_set;
   private Map<String, FieldSetterCommand> setters = new HashMap<String, FieldSetterCommand>();
   private void init0() {
-    setters.put("id", new FieldSetterCommand() {
+    setters.put("location_id", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
-        air_quality.this.id = (Integer)value;
+        air_quality.this.location_id = (Integer)value;
       }
     });
-    setters.put("air_quality_Carbon_Monoxide", new FieldSetterCommand() {
+    setters.put("air_quality_carbon_monoxide", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
-        air_quality.this.air_quality_Carbon_Monoxide = (Double)value;
+        air_quality.this.air_quality_carbon_monoxide = (Double)value;
       }
     });
-    setters.put("air_quality_Ozone", new FieldSetterCommand() {
+    setters.put("air_quality_ozone", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
-        air_quality.this.air_quality_Ozone = (Double)value;
+        air_quality.this.air_quality_ozone = (Double)value;
       }
     });
-    setters.put("air_quality_Nitrogen_dioxide", new FieldSetterCommand() {
+    setters.put("air_quality_nitrogen_dioxide", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
-        air_quality.this.air_quality_Nitrogen_dioxide = (Double)value;
+        air_quality.this.air_quality_nitrogen_dioxide = (Double)value;
       }
     });
-    setters.put("air_quality_Sulphur_dioxide", new FieldSetterCommand() {
+    setters.put("air_quality_sulphur_dioxide", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
-        air_quality.this.air_quality_Sulphur_dioxide = (Double)value;
+        air_quality.this.air_quality_sulphur_dioxide = (Double)value;
       }
     });
-    setters.put("air_quality_PM2_5", new FieldSetterCommand() {
+    setters.put("air_quality_pm2_5", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
-        air_quality.this.air_quality_PM2_5 = (Double)value;
+        air_quality.this.air_quality_pm2_5 = (Double)value;
       }
     });
-    setters.put("air_quality_PM10", new FieldSetterCommand() {
+    setters.put("air_quality_pm10", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
-        air_quality.this.air_quality_PM10 = (Double)value;
+        air_quality.this.air_quality_pm10 = (Double)value;
       }
     });
     setters.put("air_quality_us_epa_index", new FieldSetterCommand() {
@@ -98,81 +98,81 @@ public class air_quality extends SqoopRecord  implements DBWritable, Writable {
   public air_quality() {
     init0();
   }
-  private Integer id;
-  public Integer get_id() {
-    return id;
+  private Integer location_id;
+  public Integer get_location_id() {
+    return location_id;
   }
-  public void set_id(Integer id) {
-    this.id = id;
+  public void set_location_id(Integer location_id) {
+    this.location_id = location_id;
   }
-  public air_quality with_id(Integer id) {
-    this.id = id;
+  public air_quality with_location_id(Integer location_id) {
+    this.location_id = location_id;
     return this;
   }
-  private Double air_quality_Carbon_Monoxide;
-  public Double get_air_quality_Carbon_Monoxide() {
-    return air_quality_Carbon_Monoxide;
+  private Double air_quality_carbon_monoxide;
+  public Double get_air_quality_carbon_monoxide() {
+    return air_quality_carbon_monoxide;
   }
-  public void set_air_quality_Carbon_Monoxide(Double air_quality_Carbon_Monoxide) {
-    this.air_quality_Carbon_Monoxide = air_quality_Carbon_Monoxide;
+  public void set_air_quality_carbon_monoxide(Double air_quality_carbon_monoxide) {
+    this.air_quality_carbon_monoxide = air_quality_carbon_monoxide;
   }
-  public air_quality with_air_quality_Carbon_Monoxide(Double air_quality_Carbon_Monoxide) {
-    this.air_quality_Carbon_Monoxide = air_quality_Carbon_Monoxide;
+  public air_quality with_air_quality_carbon_monoxide(Double air_quality_carbon_monoxide) {
+    this.air_quality_carbon_monoxide = air_quality_carbon_monoxide;
     return this;
   }
-  private Double air_quality_Ozone;
-  public Double get_air_quality_Ozone() {
-    return air_quality_Ozone;
+  private Double air_quality_ozone;
+  public Double get_air_quality_ozone() {
+    return air_quality_ozone;
   }
-  public void set_air_quality_Ozone(Double air_quality_Ozone) {
-    this.air_quality_Ozone = air_quality_Ozone;
+  public void set_air_quality_ozone(Double air_quality_ozone) {
+    this.air_quality_ozone = air_quality_ozone;
   }
-  public air_quality with_air_quality_Ozone(Double air_quality_Ozone) {
-    this.air_quality_Ozone = air_quality_Ozone;
+  public air_quality with_air_quality_ozone(Double air_quality_ozone) {
+    this.air_quality_ozone = air_quality_ozone;
     return this;
   }
-  private Double air_quality_Nitrogen_dioxide;
-  public Double get_air_quality_Nitrogen_dioxide() {
-    return air_quality_Nitrogen_dioxide;
+  private Double air_quality_nitrogen_dioxide;
+  public Double get_air_quality_nitrogen_dioxide() {
+    return air_quality_nitrogen_dioxide;
   }
-  public void set_air_quality_Nitrogen_dioxide(Double air_quality_Nitrogen_dioxide) {
-    this.air_quality_Nitrogen_dioxide = air_quality_Nitrogen_dioxide;
+  public void set_air_quality_nitrogen_dioxide(Double air_quality_nitrogen_dioxide) {
+    this.air_quality_nitrogen_dioxide = air_quality_nitrogen_dioxide;
   }
-  public air_quality with_air_quality_Nitrogen_dioxide(Double air_quality_Nitrogen_dioxide) {
-    this.air_quality_Nitrogen_dioxide = air_quality_Nitrogen_dioxide;
+  public air_quality with_air_quality_nitrogen_dioxide(Double air_quality_nitrogen_dioxide) {
+    this.air_quality_nitrogen_dioxide = air_quality_nitrogen_dioxide;
     return this;
   }
-  private Double air_quality_Sulphur_dioxide;
-  public Double get_air_quality_Sulphur_dioxide() {
-    return air_quality_Sulphur_dioxide;
+  private Double air_quality_sulphur_dioxide;
+  public Double get_air_quality_sulphur_dioxide() {
+    return air_quality_sulphur_dioxide;
   }
-  public void set_air_quality_Sulphur_dioxide(Double air_quality_Sulphur_dioxide) {
-    this.air_quality_Sulphur_dioxide = air_quality_Sulphur_dioxide;
+  public void set_air_quality_sulphur_dioxide(Double air_quality_sulphur_dioxide) {
+    this.air_quality_sulphur_dioxide = air_quality_sulphur_dioxide;
   }
-  public air_quality with_air_quality_Sulphur_dioxide(Double air_quality_Sulphur_dioxide) {
-    this.air_quality_Sulphur_dioxide = air_quality_Sulphur_dioxide;
+  public air_quality with_air_quality_sulphur_dioxide(Double air_quality_sulphur_dioxide) {
+    this.air_quality_sulphur_dioxide = air_quality_sulphur_dioxide;
     return this;
   }
-  private Double air_quality_PM2_5;
-  public Double get_air_quality_PM2_5() {
-    return air_quality_PM2_5;
+  private Double air_quality_pm2_5;
+  public Double get_air_quality_pm2_5() {
+    return air_quality_pm2_5;
   }
-  public void set_air_quality_PM2_5(Double air_quality_PM2_5) {
-    this.air_quality_PM2_5 = air_quality_PM2_5;
+  public void set_air_quality_pm2_5(Double air_quality_pm2_5) {
+    this.air_quality_pm2_5 = air_quality_pm2_5;
   }
-  public air_quality with_air_quality_PM2_5(Double air_quality_PM2_5) {
-    this.air_quality_PM2_5 = air_quality_PM2_5;
+  public air_quality with_air_quality_pm2_5(Double air_quality_pm2_5) {
+    this.air_quality_pm2_5 = air_quality_pm2_5;
     return this;
   }
-  private Double air_quality_PM10;
-  public Double get_air_quality_PM10() {
-    return air_quality_PM10;
+  private Double air_quality_pm10;
+  public Double get_air_quality_pm10() {
+    return air_quality_pm10;
   }
-  public void set_air_quality_PM10(Double air_quality_PM10) {
-    this.air_quality_PM10 = air_quality_PM10;
+  public void set_air_quality_pm10(Double air_quality_pm10) {
+    this.air_quality_pm10 = air_quality_pm10;
   }
-  public air_quality with_air_quality_PM10(Double air_quality_PM10) {
-    this.air_quality_PM10 = air_quality_PM10;
+  public air_quality with_air_quality_pm10(Double air_quality_pm10) {
+    this.air_quality_pm10 = air_quality_pm10;
     return this;
   }
   private Integer air_quality_us_epa_index;
@@ -206,13 +206,13 @@ public class air_quality extends SqoopRecord  implements DBWritable, Writable {
     }
     air_quality that = (air_quality) o;
     boolean equal = true;
-    equal = equal && (this.id == null ? that.id == null : this.id.equals(that.id));
-    equal = equal && (this.air_quality_Carbon_Monoxide == null ? that.air_quality_Carbon_Monoxide == null : this.air_quality_Carbon_Monoxide.equals(that.air_quality_Carbon_Monoxide));
-    equal = equal && (this.air_quality_Ozone == null ? that.air_quality_Ozone == null : this.air_quality_Ozone.equals(that.air_quality_Ozone));
-    equal = equal && (this.air_quality_Nitrogen_dioxide == null ? that.air_quality_Nitrogen_dioxide == null : this.air_quality_Nitrogen_dioxide.equals(that.air_quality_Nitrogen_dioxide));
-    equal = equal && (this.air_quality_Sulphur_dioxide == null ? that.air_quality_Sulphur_dioxide == null : this.air_quality_Sulphur_dioxide.equals(that.air_quality_Sulphur_dioxide));
-    equal = equal && (this.air_quality_PM2_5 == null ? that.air_quality_PM2_5 == null : this.air_quality_PM2_5.equals(that.air_quality_PM2_5));
-    equal = equal && (this.air_quality_PM10 == null ? that.air_quality_PM10 == null : this.air_quality_PM10.equals(that.air_quality_PM10));
+    equal = equal && (this.location_id == null ? that.location_id == null : this.location_id.equals(that.location_id));
+    equal = equal && (this.air_quality_carbon_monoxide == null ? that.air_quality_carbon_monoxide == null : this.air_quality_carbon_monoxide.equals(that.air_quality_carbon_monoxide));
+    equal = equal && (this.air_quality_ozone == null ? that.air_quality_ozone == null : this.air_quality_ozone.equals(that.air_quality_ozone));
+    equal = equal && (this.air_quality_nitrogen_dioxide == null ? that.air_quality_nitrogen_dioxide == null : this.air_quality_nitrogen_dioxide.equals(that.air_quality_nitrogen_dioxide));
+    equal = equal && (this.air_quality_sulphur_dioxide == null ? that.air_quality_sulphur_dioxide == null : this.air_quality_sulphur_dioxide.equals(that.air_quality_sulphur_dioxide));
+    equal = equal && (this.air_quality_pm2_5 == null ? that.air_quality_pm2_5 == null : this.air_quality_pm2_5.equals(that.air_quality_pm2_5));
+    equal = equal && (this.air_quality_pm10 == null ? that.air_quality_pm10 == null : this.air_quality_pm10.equals(that.air_quality_pm10));
     equal = equal && (this.air_quality_us_epa_index == null ? that.air_quality_us_epa_index == null : this.air_quality_us_epa_index.equals(that.air_quality_us_epa_index));
     equal = equal && (this.air_quality_gb_defra_index == null ? that.air_quality_gb_defra_index == null : this.air_quality_gb_defra_index.equals(that.air_quality_gb_defra_index));
     return equal;
@@ -226,37 +226,37 @@ public class air_quality extends SqoopRecord  implements DBWritable, Writable {
     }
     air_quality that = (air_quality) o;
     boolean equal = true;
-    equal = equal && (this.id == null ? that.id == null : this.id.equals(that.id));
-    equal = equal && (this.air_quality_Carbon_Monoxide == null ? that.air_quality_Carbon_Monoxide == null : this.air_quality_Carbon_Monoxide.equals(that.air_quality_Carbon_Monoxide));
-    equal = equal && (this.air_quality_Ozone == null ? that.air_quality_Ozone == null : this.air_quality_Ozone.equals(that.air_quality_Ozone));
-    equal = equal && (this.air_quality_Nitrogen_dioxide == null ? that.air_quality_Nitrogen_dioxide == null : this.air_quality_Nitrogen_dioxide.equals(that.air_quality_Nitrogen_dioxide));
-    equal = equal && (this.air_quality_Sulphur_dioxide == null ? that.air_quality_Sulphur_dioxide == null : this.air_quality_Sulphur_dioxide.equals(that.air_quality_Sulphur_dioxide));
-    equal = equal && (this.air_quality_PM2_5 == null ? that.air_quality_PM2_5 == null : this.air_quality_PM2_5.equals(that.air_quality_PM2_5));
-    equal = equal && (this.air_quality_PM10 == null ? that.air_quality_PM10 == null : this.air_quality_PM10.equals(that.air_quality_PM10));
+    equal = equal && (this.location_id == null ? that.location_id == null : this.location_id.equals(that.location_id));
+    equal = equal && (this.air_quality_carbon_monoxide == null ? that.air_quality_carbon_monoxide == null : this.air_quality_carbon_monoxide.equals(that.air_quality_carbon_monoxide));
+    equal = equal && (this.air_quality_ozone == null ? that.air_quality_ozone == null : this.air_quality_ozone.equals(that.air_quality_ozone));
+    equal = equal && (this.air_quality_nitrogen_dioxide == null ? that.air_quality_nitrogen_dioxide == null : this.air_quality_nitrogen_dioxide.equals(that.air_quality_nitrogen_dioxide));
+    equal = equal && (this.air_quality_sulphur_dioxide == null ? that.air_quality_sulphur_dioxide == null : this.air_quality_sulphur_dioxide.equals(that.air_quality_sulphur_dioxide));
+    equal = equal && (this.air_quality_pm2_5 == null ? that.air_quality_pm2_5 == null : this.air_quality_pm2_5.equals(that.air_quality_pm2_5));
+    equal = equal && (this.air_quality_pm10 == null ? that.air_quality_pm10 == null : this.air_quality_pm10.equals(that.air_quality_pm10));
     equal = equal && (this.air_quality_us_epa_index == null ? that.air_quality_us_epa_index == null : this.air_quality_us_epa_index.equals(that.air_quality_us_epa_index));
     equal = equal && (this.air_quality_gb_defra_index == null ? that.air_quality_gb_defra_index == null : this.air_quality_gb_defra_index.equals(that.air_quality_gb_defra_index));
     return equal;
   }
   public void readFields(ResultSet __dbResults) throws SQLException {
     this.__cur_result_set = __dbResults;
-    this.id = JdbcWritableBridge.readInteger(1, __dbResults);
-    this.air_quality_Carbon_Monoxide = JdbcWritableBridge.readDouble(2, __dbResults);
-    this.air_quality_Ozone = JdbcWritableBridge.readDouble(3, __dbResults);
-    this.air_quality_Nitrogen_dioxide = JdbcWritableBridge.readDouble(4, __dbResults);
-    this.air_quality_Sulphur_dioxide = JdbcWritableBridge.readDouble(5, __dbResults);
-    this.air_quality_PM2_5 = JdbcWritableBridge.readDouble(6, __dbResults);
-    this.air_quality_PM10 = JdbcWritableBridge.readDouble(7, __dbResults);
+    this.location_id = JdbcWritableBridge.readInteger(1, __dbResults);
+    this.air_quality_carbon_monoxide = JdbcWritableBridge.readDouble(2, __dbResults);
+    this.air_quality_ozone = JdbcWritableBridge.readDouble(3, __dbResults);
+    this.air_quality_nitrogen_dioxide = JdbcWritableBridge.readDouble(4, __dbResults);
+    this.air_quality_sulphur_dioxide = JdbcWritableBridge.readDouble(5, __dbResults);
+    this.air_quality_pm2_5 = JdbcWritableBridge.readDouble(6, __dbResults);
+    this.air_quality_pm10 = JdbcWritableBridge.readDouble(7, __dbResults);
     this.air_quality_us_epa_index = JdbcWritableBridge.readInteger(8, __dbResults);
     this.air_quality_gb_defra_index = JdbcWritableBridge.readInteger(9, __dbResults);
   }
   public void readFields0(ResultSet __dbResults) throws SQLException {
-    this.id = JdbcWritableBridge.readInteger(1, __dbResults);
-    this.air_quality_Carbon_Monoxide = JdbcWritableBridge.readDouble(2, __dbResults);
-    this.air_quality_Ozone = JdbcWritableBridge.readDouble(3, __dbResults);
-    this.air_quality_Nitrogen_dioxide = JdbcWritableBridge.readDouble(4, __dbResults);
-    this.air_quality_Sulphur_dioxide = JdbcWritableBridge.readDouble(5, __dbResults);
-    this.air_quality_PM2_5 = JdbcWritableBridge.readDouble(6, __dbResults);
-    this.air_quality_PM10 = JdbcWritableBridge.readDouble(7, __dbResults);
+    this.location_id = JdbcWritableBridge.readInteger(1, __dbResults);
+    this.air_quality_carbon_monoxide = JdbcWritableBridge.readDouble(2, __dbResults);
+    this.air_quality_ozone = JdbcWritableBridge.readDouble(3, __dbResults);
+    this.air_quality_nitrogen_dioxide = JdbcWritableBridge.readDouble(4, __dbResults);
+    this.air_quality_sulphur_dioxide = JdbcWritableBridge.readDouble(5, __dbResults);
+    this.air_quality_pm2_5 = JdbcWritableBridge.readDouble(6, __dbResults);
+    this.air_quality_pm10 = JdbcWritableBridge.readDouble(7, __dbResults);
     this.air_quality_us_epa_index = JdbcWritableBridge.readInteger(8, __dbResults);
     this.air_quality_gb_defra_index = JdbcWritableBridge.readInteger(9, __dbResults);
   }
@@ -271,25 +271,25 @@ public class air_quality extends SqoopRecord  implements DBWritable, Writable {
   }
 
   public int write(PreparedStatement __dbStmt, int __off) throws SQLException {
-    JdbcWritableBridge.writeInteger(id, 1 + __off, 4, __dbStmt);
-    JdbcWritableBridge.writeDouble(air_quality_Carbon_Monoxide, 2 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(air_quality_Ozone, 3 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(air_quality_Nitrogen_dioxide, 4 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(air_quality_Sulphur_dioxide, 5 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(air_quality_PM2_5, 6 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(air_quality_PM10, 7 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeInteger(location_id, 1 + __off, 4, __dbStmt);
+    JdbcWritableBridge.writeDouble(air_quality_carbon_monoxide, 2 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(air_quality_ozone, 3 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(air_quality_nitrogen_dioxide, 4 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(air_quality_sulphur_dioxide, 5 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(air_quality_pm2_5, 6 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(air_quality_pm10, 7 + __off, 8, __dbStmt);
     JdbcWritableBridge.writeInteger(air_quality_us_epa_index, 8 + __off, 4, __dbStmt);
     JdbcWritableBridge.writeInteger(air_quality_gb_defra_index, 9 + __off, 4, __dbStmt);
     return 9;
   }
   public void write0(PreparedStatement __dbStmt, int __off) throws SQLException {
-    JdbcWritableBridge.writeInteger(id, 1 + __off, 4, __dbStmt);
-    JdbcWritableBridge.writeDouble(air_quality_Carbon_Monoxide, 2 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(air_quality_Ozone, 3 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(air_quality_Nitrogen_dioxide, 4 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(air_quality_Sulphur_dioxide, 5 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(air_quality_PM2_5, 6 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(air_quality_PM10, 7 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeInteger(location_id, 1 + __off, 4, __dbStmt);
+    JdbcWritableBridge.writeDouble(air_quality_carbon_monoxide, 2 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(air_quality_ozone, 3 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(air_quality_nitrogen_dioxide, 4 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(air_quality_sulphur_dioxide, 5 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(air_quality_pm2_5, 6 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(air_quality_pm10, 7 + __off, 8, __dbStmt);
     JdbcWritableBridge.writeInteger(air_quality_us_epa_index, 8 + __off, 4, __dbStmt);
     JdbcWritableBridge.writeInteger(air_quality_gb_defra_index, 9 + __off, 4, __dbStmt);
   }
@@ -297,39 +297,39 @@ public class air_quality extends SqoopRecord  implements DBWritable, Writable {
 this.readFields0(__dataIn);  }
   public void readFields0(DataInput __dataIn) throws IOException {
     if (__dataIn.readBoolean()) { 
-        this.id = null;
+        this.location_id = null;
     } else {
-    this.id = Integer.valueOf(__dataIn.readInt());
+    this.location_id = Integer.valueOf(__dataIn.readInt());
     }
     if (__dataIn.readBoolean()) { 
-        this.air_quality_Carbon_Monoxide = null;
+        this.air_quality_carbon_monoxide = null;
     } else {
-    this.air_quality_Carbon_Monoxide = Double.valueOf(__dataIn.readDouble());
+    this.air_quality_carbon_monoxide = Double.valueOf(__dataIn.readDouble());
     }
     if (__dataIn.readBoolean()) { 
-        this.air_quality_Ozone = null;
+        this.air_quality_ozone = null;
     } else {
-    this.air_quality_Ozone = Double.valueOf(__dataIn.readDouble());
+    this.air_quality_ozone = Double.valueOf(__dataIn.readDouble());
     }
     if (__dataIn.readBoolean()) { 
-        this.air_quality_Nitrogen_dioxide = null;
+        this.air_quality_nitrogen_dioxide = null;
     } else {
-    this.air_quality_Nitrogen_dioxide = Double.valueOf(__dataIn.readDouble());
+    this.air_quality_nitrogen_dioxide = Double.valueOf(__dataIn.readDouble());
     }
     if (__dataIn.readBoolean()) { 
-        this.air_quality_Sulphur_dioxide = null;
+        this.air_quality_sulphur_dioxide = null;
     } else {
-    this.air_quality_Sulphur_dioxide = Double.valueOf(__dataIn.readDouble());
+    this.air_quality_sulphur_dioxide = Double.valueOf(__dataIn.readDouble());
     }
     if (__dataIn.readBoolean()) { 
-        this.air_quality_PM2_5 = null;
+        this.air_quality_pm2_5 = null;
     } else {
-    this.air_quality_PM2_5 = Double.valueOf(__dataIn.readDouble());
+    this.air_quality_pm2_5 = Double.valueOf(__dataIn.readDouble());
     }
     if (__dataIn.readBoolean()) { 
-        this.air_quality_PM10 = null;
+        this.air_quality_pm10 = null;
     } else {
-    this.air_quality_PM10 = Double.valueOf(__dataIn.readDouble());
+    this.air_quality_pm10 = Double.valueOf(__dataIn.readDouble());
     }
     if (__dataIn.readBoolean()) { 
         this.air_quality_us_epa_index = null;
@@ -343,47 +343,47 @@ this.readFields0(__dataIn);  }
     }
   }
   public void write(DataOutput __dataOut) throws IOException {
-    if (null == this.id) { 
+    if (null == this.location_id) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeInt(this.id);
+    __dataOut.writeInt(this.location_id);
     }
-    if (null == this.air_quality_Carbon_Monoxide) { 
+    if (null == this.air_quality_carbon_monoxide) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.air_quality_Carbon_Monoxide);
+    __dataOut.writeDouble(this.air_quality_carbon_monoxide);
     }
-    if (null == this.air_quality_Ozone) { 
+    if (null == this.air_quality_ozone) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.air_quality_Ozone);
+    __dataOut.writeDouble(this.air_quality_ozone);
     }
-    if (null == this.air_quality_Nitrogen_dioxide) { 
+    if (null == this.air_quality_nitrogen_dioxide) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.air_quality_Nitrogen_dioxide);
+    __dataOut.writeDouble(this.air_quality_nitrogen_dioxide);
     }
-    if (null == this.air_quality_Sulphur_dioxide) { 
+    if (null == this.air_quality_sulphur_dioxide) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.air_quality_Sulphur_dioxide);
+    __dataOut.writeDouble(this.air_quality_sulphur_dioxide);
     }
-    if (null == this.air_quality_PM2_5) { 
+    if (null == this.air_quality_pm2_5) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.air_quality_PM2_5);
+    __dataOut.writeDouble(this.air_quality_pm2_5);
     }
-    if (null == this.air_quality_PM10) { 
+    if (null == this.air_quality_pm10) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.air_quality_PM10);
+    __dataOut.writeDouble(this.air_quality_pm10);
     }
     if (null == this.air_quality_us_epa_index) { 
         __dataOut.writeBoolean(true);
@@ -399,47 +399,47 @@ this.readFields0(__dataIn);  }
     }
   }
   public void write0(DataOutput __dataOut) throws IOException {
-    if (null == this.id) { 
+    if (null == this.location_id) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeInt(this.id);
+    __dataOut.writeInt(this.location_id);
     }
-    if (null == this.air_quality_Carbon_Monoxide) { 
+    if (null == this.air_quality_carbon_monoxide) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.air_quality_Carbon_Monoxide);
+    __dataOut.writeDouble(this.air_quality_carbon_monoxide);
     }
-    if (null == this.air_quality_Ozone) { 
+    if (null == this.air_quality_ozone) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.air_quality_Ozone);
+    __dataOut.writeDouble(this.air_quality_ozone);
     }
-    if (null == this.air_quality_Nitrogen_dioxide) { 
+    if (null == this.air_quality_nitrogen_dioxide) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.air_quality_Nitrogen_dioxide);
+    __dataOut.writeDouble(this.air_quality_nitrogen_dioxide);
     }
-    if (null == this.air_quality_Sulphur_dioxide) { 
+    if (null == this.air_quality_sulphur_dioxide) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.air_quality_Sulphur_dioxide);
+    __dataOut.writeDouble(this.air_quality_sulphur_dioxide);
     }
-    if (null == this.air_quality_PM2_5) { 
+    if (null == this.air_quality_pm2_5) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.air_quality_PM2_5);
+    __dataOut.writeDouble(this.air_quality_pm2_5);
     }
-    if (null == this.air_quality_PM10) { 
+    if (null == this.air_quality_pm10) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.air_quality_PM10);
+    __dataOut.writeDouble(this.air_quality_pm10);
     }
     if (null == this.air_quality_us_epa_index) { 
         __dataOut.writeBoolean(true);
@@ -467,19 +467,19 @@ this.readFields0(__dataIn);  }
   public String toString(DelimiterSet delimiters, boolean useRecordDelim) {
     StringBuilder __sb = new StringBuilder();
     char fieldDelim = delimiters.getFieldsTerminatedBy();
-    __sb.append(FieldFormatter.escapeAndEnclose(id==null?"null":"" + id, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(location_id==null?"null":"" + location_id, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_Carbon_Monoxide==null?"null":"" + air_quality_Carbon_Monoxide, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_carbon_monoxide==null?"null":"" + air_quality_carbon_monoxide, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_Ozone==null?"null":"" + air_quality_Ozone, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_ozone==null?"null":"" + air_quality_ozone, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_Nitrogen_dioxide==null?"null":"" + air_quality_Nitrogen_dioxide, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_nitrogen_dioxide==null?"null":"" + air_quality_nitrogen_dioxide, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_Sulphur_dioxide==null?"null":"" + air_quality_Sulphur_dioxide, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_sulphur_dioxide==null?"null":"" + air_quality_sulphur_dioxide, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_PM2_5==null?"null":"" + air_quality_PM2_5, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_pm2_5==null?"null":"" + air_quality_pm2_5, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_PM10==null?"null":"" + air_quality_PM10, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_pm10==null?"null":"" + air_quality_pm10, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(air_quality_us_epa_index==null?"null":"" + air_quality_us_epa_index, delimiters));
     __sb.append(fieldDelim);
@@ -490,19 +490,19 @@ this.readFields0(__dataIn);  }
     return __sb.toString();
   }
   public void toString0(DelimiterSet delimiters, StringBuilder __sb, char fieldDelim) {
-    __sb.append(FieldFormatter.escapeAndEnclose(id==null?"null":"" + id, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(location_id==null?"null":"" + location_id, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_Carbon_Monoxide==null?"null":"" + air_quality_Carbon_Monoxide, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_carbon_monoxide==null?"null":"" + air_quality_carbon_monoxide, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_Ozone==null?"null":"" + air_quality_Ozone, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_ozone==null?"null":"" + air_quality_ozone, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_Nitrogen_dioxide==null?"null":"" + air_quality_Nitrogen_dioxide, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_nitrogen_dioxide==null?"null":"" + air_quality_nitrogen_dioxide, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_Sulphur_dioxide==null?"null":"" + air_quality_Sulphur_dioxide, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_sulphur_dioxide==null?"null":"" + air_quality_sulphur_dioxide, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_PM2_5==null?"null":"" + air_quality_PM2_5, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_pm2_5==null?"null":"" + air_quality_pm2_5, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_PM10==null?"null":"" + air_quality_PM10, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(air_quality_pm10==null?"null":"" + air_quality_pm10, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(air_quality_us_epa_index==null?"null":"" + air_quality_us_epa_index, delimiters));
     __sb.append(fieldDelim);
@@ -567,8 +567,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.id = null; } else {
-      this.id = Integer.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.location_id = null; } else {
+      this.location_id = Integer.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -576,8 +576,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_Carbon_Monoxide = null; } else {
-      this.air_quality_Carbon_Monoxide = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_carbon_monoxide = null; } else {
+      this.air_quality_carbon_monoxide = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -585,8 +585,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_Ozone = null; } else {
-      this.air_quality_Ozone = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_ozone = null; } else {
+      this.air_quality_ozone = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -594,8 +594,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_Nitrogen_dioxide = null; } else {
-      this.air_quality_Nitrogen_dioxide = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_nitrogen_dioxide = null; } else {
+      this.air_quality_nitrogen_dioxide = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -603,8 +603,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_Sulphur_dioxide = null; } else {
-      this.air_quality_Sulphur_dioxide = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_sulphur_dioxide = null; } else {
+      this.air_quality_sulphur_dioxide = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -612,8 +612,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_PM2_5 = null; } else {
-      this.air_quality_PM2_5 = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_pm2_5 = null; } else {
+      this.air_quality_pm2_5 = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -621,8 +621,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_PM10 = null; } else {
-      this.air_quality_PM10 = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_pm10 = null; } else {
+      this.air_quality_pm10 = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -653,8 +653,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.id = null; } else {
-      this.id = Integer.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.location_id = null; } else {
+      this.location_id = Integer.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -662,8 +662,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_Carbon_Monoxide = null; } else {
-      this.air_quality_Carbon_Monoxide = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_carbon_monoxide = null; } else {
+      this.air_quality_carbon_monoxide = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -671,8 +671,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_Ozone = null; } else {
-      this.air_quality_Ozone = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_ozone = null; } else {
+      this.air_quality_ozone = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -680,8 +680,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_Nitrogen_dioxide = null; } else {
-      this.air_quality_Nitrogen_dioxide = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_nitrogen_dioxide = null; } else {
+      this.air_quality_nitrogen_dioxide = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -689,8 +689,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_Sulphur_dioxide = null; } else {
-      this.air_quality_Sulphur_dioxide = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_sulphur_dioxide = null; } else {
+      this.air_quality_sulphur_dioxide = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -698,8 +698,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_PM2_5 = null; } else {
-      this.air_quality_PM2_5 = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_pm2_5 = null; } else {
+      this.air_quality_pm2_5 = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -707,8 +707,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_PM10 = null; } else {
-      this.air_quality_PM10 = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.air_quality_pm10 = null; } else {
+      this.air_quality_pm10 = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -741,26 +741,26 @@ this.readFields0(__dataIn);  }
 
   public Map<String, Object> getFieldMap() {
     Map<String, Object> __sqoop$field_map = new HashMap<String, Object>();
-    __sqoop$field_map.put("id", this.id);
-    __sqoop$field_map.put("air_quality_Carbon_Monoxide", this.air_quality_Carbon_Monoxide);
-    __sqoop$field_map.put("air_quality_Ozone", this.air_quality_Ozone);
-    __sqoop$field_map.put("air_quality_Nitrogen_dioxide", this.air_quality_Nitrogen_dioxide);
-    __sqoop$field_map.put("air_quality_Sulphur_dioxide", this.air_quality_Sulphur_dioxide);
-    __sqoop$field_map.put("air_quality_PM2_5", this.air_quality_PM2_5);
-    __sqoop$field_map.put("air_quality_PM10", this.air_quality_PM10);
+    __sqoop$field_map.put("location_id", this.location_id);
+    __sqoop$field_map.put("air_quality_carbon_monoxide", this.air_quality_carbon_monoxide);
+    __sqoop$field_map.put("air_quality_ozone", this.air_quality_ozone);
+    __sqoop$field_map.put("air_quality_nitrogen_dioxide", this.air_quality_nitrogen_dioxide);
+    __sqoop$field_map.put("air_quality_sulphur_dioxide", this.air_quality_sulphur_dioxide);
+    __sqoop$field_map.put("air_quality_pm2_5", this.air_quality_pm2_5);
+    __sqoop$field_map.put("air_quality_pm10", this.air_quality_pm10);
     __sqoop$field_map.put("air_quality_us_epa_index", this.air_quality_us_epa_index);
     __sqoop$field_map.put("air_quality_gb_defra_index", this.air_quality_gb_defra_index);
     return __sqoop$field_map;
   }
 
   public void getFieldMap0(Map<String, Object> __sqoop$field_map) {
-    __sqoop$field_map.put("id", this.id);
-    __sqoop$field_map.put("air_quality_Carbon_Monoxide", this.air_quality_Carbon_Monoxide);
-    __sqoop$field_map.put("air_quality_Ozone", this.air_quality_Ozone);
-    __sqoop$field_map.put("air_quality_Nitrogen_dioxide", this.air_quality_Nitrogen_dioxide);
-    __sqoop$field_map.put("air_quality_Sulphur_dioxide", this.air_quality_Sulphur_dioxide);
-    __sqoop$field_map.put("air_quality_PM2_5", this.air_quality_PM2_5);
-    __sqoop$field_map.put("air_quality_PM10", this.air_quality_PM10);
+    __sqoop$field_map.put("location_id", this.location_id);
+    __sqoop$field_map.put("air_quality_carbon_monoxide", this.air_quality_carbon_monoxide);
+    __sqoop$field_map.put("air_quality_ozone", this.air_quality_ozone);
+    __sqoop$field_map.put("air_quality_nitrogen_dioxide", this.air_quality_nitrogen_dioxide);
+    __sqoop$field_map.put("air_quality_sulphur_dioxide", this.air_quality_sulphur_dioxide);
+    __sqoop$field_map.put("air_quality_pm2_5", this.air_quality_pm2_5);
+    __sqoop$field_map.put("air_quality_pm10", this.air_quality_pm10);
     __sqoop$field_map.put("air_quality_us_epa_index", this.air_quality_us_epa_index);
     __sqoop$field_map.put("air_quality_gb_defra_index", this.air_quality_gb_defra_index);
   }

@@ -3,10 +3,10 @@
   "name" : "astronomical_data",
   "doc" : "Sqoop import of astronomical_data",
   "fields" : [ {
-    "name" : "id",
+    "name" : "location_id",
     "type" : [ "null", "int" ],
     "default" : null,
-    "columnName" : "id",
+    "columnName" : "location_id",
     "sqlType" : "4"
   }, {
     "name" : "sunrise",
